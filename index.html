@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="description" content="Sai Teja Boppiniti — Senior Data Engineer and AI/ML Researcher based in Boca Raton, Florida. 33 peer-reviewed publications, 1,000+ citations, featured in Times of India, Deccan Chronicle, and BD Tech Talks."/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Sai Teja Boppiniti — Senior Data Engineer | Researcher</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Montserrat',sans-serif;background:#fff;color:#111;-webkit-font-smoothing:antialiased;font-size:14px;line-height:1.7;}
+a{text-decoration:none;color:inherit;}
+
+nav{background:#000;height:68px;display:flex;align-items:center;justify-content:space-between;padding:0 56px;position:sticky;top:0;z-index:100;}
+.nav-logo{font-size:15px;font-weight:800;color:#fff;letter-spacing:0.06em;}
+.nav-links{display:flex;gap:36px;list-style:none;align-items:center;}
+.nav-links a{font-size:10px;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:rgba(255,255,255,0.65);transition:color 0.2s;}
+.nav-links a:hover,.nav-active{color:#fff!important;}
+.nav-active{border-bottom:1px solid #fff;padding-bottom:3px;}
+
+/* ── HERO ── */
+.hero-outer{background:#000;overflow:hidden;}
+.hero{max-width:1200px;margin:0 auto;padding:0 56px;display:flex;align-items:stretch;min-height:88vh;gap:0;}
+
+/* Photo column */
+.hero-photo{flex:0 0 400px;position:relative;display:flex;align-items:flex-end;}
+.hero-photo-wrap{position:relative;width:100%;height:560px;}
+.hero-photo-wrap img{width:100%;height:100%;object-fit:cover;object-position:top center;display:block;}
+/* fade edges into black */
+.hero-photo-wrap::after{content:'';position:absolute;inset:0;background:
+  linear-gradient(to right, transparent 65%, #000 100%),
+  linear-gradient(to top, #000 0%, transparent 20%),
+  linear-gradient(to bottom, #000 0%, transparent 10%);
+pointer-events:none;}
+
+/* Text column — sits right next to the photo */
+.hero-text{flex:1;display:flex;flex-direction:column;justify-content:center;padding-left:48px;padding-top:40px;padding-bottom:60px;}
+.hero-eyebrow{font-size:10px;font-weight:700;letter-spacing:0.3em;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-bottom:20px;}
+.hero-name{font-size:72px;font-weight:900;color:#fff;letter-spacing:-0.01em;line-height:1.0;margin-bottom:16px;text-transform:uppercase;}
+.hero-title{font-size:11px;font-weight:500;color:rgba(255,255,255,0.65);letter-spacing:0.2em;text-transform:uppercase;margin-bottom:32px;}
+.hero-bio{font-size:14px;font-weight:300;color:rgba(255,255,255,0.78);line-height:1.95;max-width:420px;margin-bottom:44px;}
+.hero-btns{display:flex;gap:12px;}
+.btn-wh{background:#fff;color:#000;padding:13px 28px;border:none;border-radius:2px;font-family:'Montserrat',sans-serif;font-size:10px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;cursor:pointer;transition:opacity 0.2s;display:inline-block;}
+.btn-wh:hover{opacity:0.82;}
+.btn-gh{background:transparent;color:#fff;padding:12px 28px;border:1.5px solid rgba(255,255,255,0.18);border-radius:2px;font-family:'Montserrat',sans-serif;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;cursor:pointer;transition:border-color 0.2s;display:inline-block;}
+.btn-gh:hover{border-color:rgba(255,255,255,0.5);}
+
+
+
+.featured-section{padding:60px 56px;border-bottom:1px solid #ebebeb;}
+.featured-inner{max-width:1100px;margin:0 auto;}
+.feat-label{font-size:10px;font-weight:700;letter-spacing:0.26em;text-transform:uppercase;color:#888;text-align:center;margin-bottom:32px;}
+.logo-bar{display:flex;align-items:center;justify-content:center;gap:0;flex-wrap:wrap;}
+.logo-item{padding:14px 28px;border-right:1px solid #ebebeb;display:flex;align-items:center;justify-content:center;}
+.logo-item:last-child{border-right:none;}
+.logo-text{font-size:13px;font-weight:800;color:#999;letter-spacing:0.04em;transition:color 0.2s;white-space:nowrap;}
+.logo-item:hover .logo-text{color:#111;}
+
+.intro{padding:88px 56px;max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;}
+.intro-tag{font-size:10px;font-weight:700;letter-spacing:0.26em;text-transform:uppercase;color:#000;margin-bottom:14px;}
+.intro-h2{font-size:36px;font-weight:900;color:#000;letter-spacing:-0.02em;line-height:1.1;margin-bottom:20px;}
+.intro-p{font-size:14px;font-weight:300;color:#555;line-height:1.95;margin-bottom:10px;}
+.intro-p strong{color:#000;font-weight:600;}
+.intro-link{display:inline-block;margin-top:18px;font-size:10px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#000;border-bottom:1px solid #000;padding-bottom:2px;transition:opacity 0.2s;}
+.intro-link:hover{opacity:0.45;}
+.pub-preview{background:#000;padding:36px;border-radius:2px;}
+.pp-tag{font-size:10px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:#444;margin-bottom:12px;}
+.pp-h{font-size:20px;font-weight:800;color:#fff;line-height:1.3;margin-bottom:14px;}
+.pp-p{font-size:13px;font-weight:300;color:#888;line-height:1.85;margin-bottom:24px;}
+.pp-btn{display:inline-block;background:#fff;color:#000;padding:11px 22px;border-radius:2px;font-size:10px;font-weight:800;letter-spacing:0.12em;text-transform:uppercase;transition:opacity 0.2s;}
+.pp-btn:hover{opacity:0.8;}
+
+footer{background:#000;padding:28px 56px;display:flex;align-items:center;justify-content:space-between;border-top:1px solid #1a1a1a;}
+.foot-logo{font-size:14px;font-weight:800;color:#fff;}
+.foot-copy{font-size:10px;color:#999;letter-spacing:0.05em;}
+.foot-links{display:flex;gap:20px;}
+.foot-links a{font-size:10px;color:#555;transition:color 0.2s;}
+.foot-links a:hover{color:#fff;}
+
+/* ── MOBILE RESPONSIVE ── */
+@media (max-width: 768px) {
+  nav{padding:0 20px;}
+  .nav-logo{font-size:13px;}
+  .nav-links{gap:16px;}
+  .nav-links a{font-size:9px;}
+  .hero{flex-direction:column;min-height:auto;padding:0 20px;}
+  .hero-photo{flex:none;width:100%;height:320px;}
+  .hero-photo-wrap{height:320px;}
+  .hero-text{padding:32px 0 48px;}
+  .hero-name{font-size:42px;}
+  .featured-section{padding:40px 20px;}
+  .intro{padding:56px 20px;grid-template-columns:1fr;gap:40px;}
+  footer{flex-direction:column;gap:12px;padding:24px 20px;text-align:center;}
+}
+
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">Sai Teja Boppiniti</div>
+  <ul class="nav-links">
+    <li><a href="index.html" class="nav-active">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="publications.html">Publications</a></li>
+    <li><a href="media.html">Media</a></li>
+  </ul>
+</nav>
+
+<div class="hero-outer">
+  <div class="hero">
+    <div class="hero-photo">
+      <div class="hero-photo-wrap">
+        <img src="profile.jpg" alt="Sai Teja Boppiniti"/>
+      </div>
+    </div>
+    <div class="hero-text">
+      <div class="hero-eyebrow">Boca Raton, Florida</div>
+      <div class="hero-name">Sai Teja<br>Boppiniti</div>
+      <div class="hero-title">Senior Data Engineer &nbsp;|&nbsp; Researcher</div>
+      <p class="hero-bio">Senior Data Engineer at The Kroger Co. and independent AI/ML researcher — building large-scale data systems by day, publishing peer-reviewed research on healthcare AI, stream processing, and machine learning by night.</p>
+      <div class="hero-btns">
+        <a class="btn-wh" href="publications.html">Research</a>
+        <a class="btn-gh" href="media.html">Media Coverage</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="featured-section">
+  <div class="featured-inner">
+    <div class="feat-label">Featured In</div>
+    <div class="logo-bar">
+      <a class="logo-item" href="https://timesofindia.indiatimes.com/city/mumbai/ai-driven-health-monitoring-shift-from-reactive-to-proactive-care/articleshow/113911499.cms" target="_blank"><span class="logo-text">Times of India</span></a>
+      <a class="logo-item" href="https://www.deccanchronicle.com/in-focus/indian-researcher-develops-smart-contact-lenses-with-ai-for-continuous-health-tracking-and-disease-detection-1827211" target="_blank"><span class="logo-text">Deccan Chronicle</span></a>
+      <a class="logo-item" href="https://www.jagran.com/delhi/new-delhi-city-ncr-scientists-experiment-to-monitor-diabetes-using-ai-technology-23807495.html" target="_blank"><span class="logo-text">Jagran</span></a>
+      <a class="logo-item" href="https://bdtechtalks.com/2024/11/08/ai-powered-smart-contact-lenses/" target="_blank"><span class="logo-text">BD Tech Talks</span></a>
+      <a class="logo-item" href="https://www.linkedin.com/pulse/revolutionizing-healthcare-smart-contact-lenses-future-lzqef" target="_blank"><span class="logo-text">LinkedIn</span></a>
+    </div>
+  </div>
+</div>
+
+<div class="intro">
+  <div>
+    <div class="intro-tag">What I Do</div>
+    <div class="intro-h2">Data Engineering<br>&amp; Research</div>
+    <p class="intro-p">I work on the intersection of <strong>data engineering and applied AI research</strong> — designing pipelines that handle data at scale, and publishing research on how machine learning can drive better decisions in healthcare, finance, and infrastructure.</p>
+    <p class="intro-p">Over a decade of experience in both industry and academia — building systems at scale and publishing research that applies AI to real-world problems.</p>
+    <a class="intro-link" href="about.html">More About Me →</a>
+  </div>
+  <div class="pub-preview">
+    <div class="pp-tag">Research Output</div>
+    <div class="pp-h">33 Publications · 1,000+ Citations</div>
+    <p class="pp-p">Work published in international journals spanning Healthcare AI, stream processing, predictive analytics, cybersecurity, and edge AI.</p>
+    <a class="pp-btn" href="publications.html">View Publications →</a>
+  </div>
+</div>
+
+<footer>
+  <div class="foot-logo">Sai Teja Boppiniti</div>
+  <div class="foot-copy">© 2025 Sai Teja Boppiniti · All Rights Reserved · saitejaboppiniti.com</div>
+  <div class="foot-links">
+    <a href="https://scholar.google.com/citations?user=H3XJtbcAAAAJ&hl=en" target="_blank">Google Scholar</a>
+    <a href="https://www.linkedin.com/in/saitejaboppiniti" target="_blank">LinkedIn</a>
+  </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="description" content="About Sai Teja Boppiniti — Senior Data Engineer at The Kroger Co. and independent AI/ML researcher with over a decade of experience in data engineering, machine learning, and healthcare AI."/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>About | Sai Teja Boppiniti</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Montserrat',sans-serif;background:#fff;color:#111;-webkit-font-smoothing:antialiased;font-size:14px;line-height:1.7;}
+a{text-decoration:none;color:inherit;}
+nav{background:#000;height:68px;display:flex;align-items:center;justify-content:space-between;padding:0 56px;position:sticky;top:0;z-index:100;}
+.nav-logo{font-size:15px;font-weight:800;color:#fff;}
+.nav-links{display:flex;gap:36px;list-style:none;align-items:center;}
+.nav-links a{font-size:10px;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:rgba(255,255,255,0.45);transition:color 0.2s;}
+.nav-links a:hover,.nav-active{color:#fff!important;}
+.nav-active{border-bottom:1px solid #fff;padding-bottom:3px;}
+
+/* HERO */
+.hero{background:#000;padding:64px 56px;text-align:left;max-width:1100px;margin:0 auto;}
+.hero-tag{font-size:9px;font-weight:700;letter-spacing:0.28em;text-transform:uppercase;color:rgba(255,255,255,0.3);margin-bottom:12px;}
+.hero-h1{font-size:44px;font-weight:900;color:#fff;letter-spacing:-0.02em;margin-bottom:8px;}
+.hero-sub{font-size:13px;font-weight:300;color:rgba(255,255,255,0.4);letter-spacing:0.04em;}
+.hero-bg{background:#000;}
+
+/* BODY GRID */
+.body-grid{max-width:1100px;margin:0 auto;padding:72px 56px;display:grid;grid-template-columns:300px 1fr;gap:72px;align-items:start;}
+
+/* LEFT COL */
+.sidebar-section{margin-bottom:28px;}
+.sidebar-label{font-size:9px;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:#000;border-bottom:2px solid #000;padding-bottom:8px;margin-bottom:14px;}
+.cred-item{display:flex;align-items:flex-start;gap:10px;padding:10px 0;border-bottom:1px solid #f0f0f0;}
+.cred-item:last-child{border-bottom:none;}
+.cred-dot{width:5px;height:5px;background:#000;border-radius:50%;flex-shrink:0;margin-top:7px;}
+.cred-text{font-size:12px;font-weight:500;color:#222;line-height:1.5;}
+
+/* RIGHT COL */
+.section-tag{font-size:9px;font-weight:700;letter-spacing:0.26em;text-transform:uppercase;color:#000;margin-bottom:10px;}
+.section-h2{font-size:32px;font-weight:900;color:#000;letter-spacing:-0.02em;line-height:1.1;margin-bottom:24px;}
+.bio-p{font-size:14px;font-weight:300;color:#444;line-height:1.95;margin-bottom:16px;}
+.bio-p strong{color:#000;font-weight:600;}
+
+/* EXPERIENCE TIMELINE */
+.timeline{margin-top:48px;margin-bottom:0;}
+.tl-label{font-size:9px;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:#000;border-bottom:2px solid #000;padding-bottom:8px;margin-bottom:0;}
+.tl-item{display:grid;grid-template-columns:110px 1fr;gap:20px;padding:22px 0;border-bottom:1px solid #ebebeb;}
+.tl-item:last-child{border-bottom:none;}
+.tl-year{font-size:10px;font-weight:700;letter-spacing:0.08em;color:#999;padding-top:3px;}
+.tl-role{font-size:14px;font-weight:700;color:#000;margin-bottom:3px;}
+.tl-org{font-size:12px;font-weight:500;color:#555;margin-bottom:6px;}
+.tl-desc{font-size:12px;font-weight:300;color:#777;line-height:1.7;}
+
+/* EDU TIMELINE */
+.edu-block{margin-top:48px;}
+.edu-label{font-size:9px;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:#000;border-bottom:2px solid #000;padding-bottom:8px;margin-bottom:0;}
+.edu-item{display:grid;grid-template-columns:110px 1fr;gap:20px;padding:22px 0;border-bottom:1px solid #ebebeb;}
+.edu-item:last-child{border-bottom:none;}
+.edu-year{font-size:10px;font-weight:700;letter-spacing:0.08em;color:#999;padding-top:3px;}
+.edu-deg{font-size:14px;font-weight:700;color:#000;margin-bottom:3px;}
+.edu-uni{font-size:12px;font-weight:500;color:#555;}
+
+/* CONTACT */
+.contact-section{background:#000;padding:72px 56px;}
+.cs-inner{max-width:1100px;margin:0 auto;}
+.cs-tag{font-size:9px;font-weight:700;letter-spacing:0.26em;text-transform:uppercase;color:rgba(255,255,255,0.3);margin-bottom:12px;}
+.cs-h2{font-size:32px;font-weight:900;color:#fff;margin-bottom:10px;}
+.cs-p{font-size:13px;font-weight:300;color:rgba(255,255,255,0.4);max-width:460px;margin-bottom:36px;}
+.cf{max-width:520px;display:flex;flex-direction:column;gap:2px;}
+.cf-row{display:grid;grid-template-columns:1fr 1fr;gap:2px;}
+.cf-field{display:flex;flex-direction:column;}
+.cf-lbl{font-size:9px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.3);background:#141414;border:1px solid #242424;border-bottom:none;padding:10px 14px 4px;}
+.cf-inp{font-family:'Montserrat',sans-serif;font-size:13px;color:#fff;background:#141414;border:1px solid #242424;border-top:none;padding:10px 14px 14px;outline:none;transition:border-color 0.2s;}
+.cf-inp:focus{border-color:#444;}
+textarea.cf-inp{resize:vertical;min-height:100px;}
+.cf-btn{background:#fff;color:#000;border:none;padding:13px 28px;font-family:'Montserrat',sans-serif;font-size:10px;font-weight:800;letter-spacing:0.14em;text-transform:uppercase;cursor:pointer;border-radius:2px;align-self:flex-start;margin-top:4px;transition:opacity 0.2s;}
+.cf-btn:hover{opacity:0.82;}
+.cf-links{display:flex;gap:10px;margin-top:24px;}
+.cf-link{display:flex;align-items:center;gap:8px;background:#141414;border:1px solid #242424;padding:10px 18px;border-radius:2px;color:rgba(255,255,255,0.5);font-size:11px;font-weight:600;letter-spacing:0.06em;transition:border-color 0.2s,color 0.2s;}
+.cf-link:hover{border-color:#444;color:#fff;}
+.cf-link svg{width:13px;height:13px;fill:currentColor;}
+
+footer{background:#000;padding:28px 56px;display:flex;align-items:center;justify-content:space-between;border-top:1px solid #1a1a1a;}
+.foot-logo{font-size:14px;font-weight:800;color:#fff;}
+.foot-copy{font-size:10px;color:#444;}
+.foot-links{display:flex;gap:20px;}
+.foot-links a{font-size:10px;color:#555;transition:color 0.2s;}
+.foot-links a:hover{color:#fff;}
+
+/* ── MOBILE RESPONSIVE ── */
+@media (max-width: 768px) {
+  nav{padding:0 20px;}
+  .nav-links{gap:16px;}
+  .nav-links a{font-size:9px;}
+  .hero{padding:40px 20px;}
+  .body-grid{padding:40px 20px;grid-template-columns:1fr;gap:40px;}
+  .contact-section{padding:48px 20px;}
+  .cf-row{grid-template-columns:1fr;}
+  footer{flex-direction:column;gap:12px;padding:24px 20px;text-align:center;}
+}
+
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">Sai Teja Boppiniti</div>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html" class="nav-active">About</a></li>
+    <li><a href="publications.html">Publications</a></li>
+    <li><a href="media.html">Media</a></li>
+  </ul>
+</nav>
+
+<div class="hero-bg">
+  <div class="hero">
+    <div class="hero-tag">About</div>
+    <div class="hero-h1">Sai Teja Boppiniti</div>
+    <div class="hero-sub">Senior Data Engineer | AI &amp; ML Researcher · Boca Raton, Florida</div>
+  </div>
+</div>
+
+<div class="body-grid">
+
+  <!-- LEFT: Photo + credentials -->
+  <div>
+    <div class="sidebar-section">
+      <div class="sidebar-label">Recognition</div>
+      <div class="cred-item"><div class="cred-dot"></div><div class="cred-text">Research Fellow</div></div>
+      <div class="cred-item"><div class="cred-dot"></div><div class="cred-text">Editorial Board Member</div></div>
+      <div class="cred-item"><div class="cred-dot"></div><div class="cred-text">Peer Reviewer</div></div>
+      <div class="cred-item"><div class="cred-dot"></div><div class="cred-text">Registered Patent Holder</div></div>
+      <div class="cred-item"><div class="cred-dot"></div><div class="cred-text">International Press Coverage</div></div>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-label">Work</div>
+      <div class="cred-item"><div class="cred-dot"></div><div class="cred-text">The Kroger Co.</div></div>
+    </div>
+  </div>
+
+  <!-- RIGHT: Bio + timeline -->
+  <div>
+    <div class="section-tag">Bio</div>
+    <div class="section-h2">About Me</div>
+    <p class="bio-p">I'm a Senior Data Engineer and AI/ML researcher with over a decade of experience building systems that actually work at scale — and publishing research on why they should. My day-to-day involves designing data pipelines, building machine learning models, and figuring out how AI can move healthcare from reactive to proactive.</p>
+    <p class="bio-p">I've been doing this in both academia and industry. On the research side, I've published 33 peer-reviewed papers and accumulated over 1,000+ citations. On the engineering side, I'm currently a <strong>Senior Data Engineer at The Kroger Co.</strong>, working on large-scale data infrastructure that powers enterprise decision-making.</p>
+    <p class="bio-p">One of the projects I'm most proud of is developing AI-embedded smart contact lenses that continuously monitor health metrics in real time — glucose levels, intraocular pressure, ocular health indicators. That work led to a published paper, international press coverage across three continents, and a registered patent.</p>
+
+    <!-- EXPERIENCE TIMELINE -->
+    <div class="timeline">
+      <div class="tl-label">Experience</div>
+      <div class="tl-item">
+        <div class="tl-year">2018 – Present</div>
+        <div>
+          <div class="tl-role">Senior Data Engineer</div>
+          <div class="tl-org">The Kroger Co. · Boca Raton, FL</div>
+          <div class="tl-desc">Designing and maintaining large-scale data pipelines and cloud infrastructure. Working with AI/ML systems for enterprise analytics and decision support.</div>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">2014 – Present</div>
+        <div>
+          <div class="tl-role">Independent Researcher</div>
+          <div class="tl-desc">Publishing peer-reviewed research in AI, machine learning, healthcare systems, and big data analytics. 33 publications, 1,000+ citations.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- EDUCATION TIMELINE -->
+    <div class="edu-block">
+      <div class="edu-label">Education</div>
+      <div class="edu-item">
+        <div class="edu-year">MS</div>
+        <div>
+          <div class="edu-deg">Master of Science — Information Systems</div>
+          <div class="edu-uni">Pace University, New York, NY</div>
+        </div>
+      </div>
+      <div class="edu-item">
+        <div class="edu-year">BE</div>
+        <div>
+          <div class="edu-deg">Bachelor of Engineering — Computer Science &amp; Engineering</div>
+          <div class="edu-uni">J.N.T. University, Hyderabad, India</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- CONTACT -->
+<div class="contact-section">
+  <div class="cs-inner">
+    <div class="cs-tag">Contact</div>
+    <div class="cs-h2">Get in Touch</div>
+    <p class="cs-p">For research collaboration, data engineering discussions, or general questions — send a message and I'll get back to you.</p>
+    <div class="cf">
+      <div class="cf-row">
+        <div class="cf-field"><div class="cf-lbl">Name</div><input class="cf-inp" type="text" placeholder="Your name"/></div>
+        <div class="cf-field"><div class="cf-lbl">Email</div><input class="cf-inp" type="email" placeholder="your@email.com"/></div>
+      </div>
+      <div class="cf-field"><div class="cf-lbl">Message</div><textarea class="cf-inp" placeholder="Your message..."></textarea></div>
+      <button class="cf-btn" onclick="this.textContent='Sent ✓';setTimeout(()=>this.textContent='Send',3000)">Send</button>
+    </div>
+    <div class="cf-links">
+      <a class="cf-link" href="https://www.linkedin.com/in/saitejaboppiniti" target="_blank">
+        <svg viewBox="0 0 24 24"><path d="M19 0H5C2.24 0 0 2.24 0 5v14c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5V5c0-2.76-2.24-5-5-5zM8 19H5V8h3v11zM6.5 6.73c-.97 0-1.75-.79-1.75-1.75S5.53 3.23 6.5 3.23s1.75.79 1.75 1.75S7.47 6.73 6.5 6.73zM20 19h-3v-5.6c0-3.37-4-3.12-4 0V19h-3V8h3v1.77C14.4 7.5 20 7.33 20 12.28V19z"/></svg>
+        LinkedIn
+      </a>
+      <a class="cf-link" href="https://scholar.google.com/citations?user=H3XJtbcAAAAJ&hl=en" target="_blank">
+        <svg viewBox="0 0 24 24"><path d="M5.242 13.769L0 9.5 12 0l12 9.5-5.242 4.269C17.548 11.249 14.978 9.5 12 9.5c-2.977 0-5.548 1.748-6.758 4.269zM12 10a7 7 0 1 0 0 14 7 7 0 0 0 0-14z"/></svg>
+        Google Scholar
+      </a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="foot-logo">Sai Teja Boppiniti</div>
+  <div class="foot-copy">© 2025 Sai Teja Boppiniti · All Rights Reserved · saitejaboppiniti.com</div>
+  <div class="foot-links">
+    <a href="https://scholar.google.com/citations?user=H3XJtbcAAAAJ&hl=en" target="_blank">Google Scholar</a>
+    <a href="https://www.linkedin.com/in/saitejaboppiniti" target="_blank">LinkedIn</a>
+  </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="description" content="Publications by Sai Teja Boppiniti — 33 peer-reviewed papers spanning Healthcare AI, Data Engineering, Edge AI, and Emerging Systems. 1,000+ citations across international journals."/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Publications | Sai Teja Boppiniti</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Montserrat',sans-serif;background:#fff;color:#111;-webkit-font-smoothing:antialiased;font-size:14px;line-height:1.7;}
+a{text-decoration:none;color:inherit;}
+
+nav{background:#000;height:68px;display:flex;align-items:center;justify-content:space-between;padding:0 56px;position:sticky;top:0;z-index:100;}
+.nav-logo{font-size:15px;font-weight:800;color:#fff;}
+.nav-links{display:flex;gap:36px;list-style:none;align-items:center;}
+.nav-links a{font-size:10px;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:rgba(255,255,255,0.45);transition:color 0.2s;}
+.nav-links a:hover,.nav-active{color:#fff!important;}
+.nav-active{border-bottom:1px solid #fff;padding-bottom:3px;}
+
+/* HERO */
+.hero{background:#000;padding:56px 56px 40px;}
+.hero-inner{max-width:900px;margin:0 auto;display:flex;align-items:flex-end;justify-content:space-between;padding-bottom:28px;border-bottom:1px solid rgba(255,255,255,0.07);}
+.hero-tag{font-size:9px;font-weight:700;letter-spacing:0.28em;text-transform:uppercase;color:rgba(255,255,255,0.3);margin-bottom:12px;}
+.hero-h1{font-size:40px;font-weight:900;color:#fff;letter-spacing:-0.02em;line-height:1.05;margin-bottom:8px;}
+.hero-sub{font-size:12px;font-weight:300;color:rgba(255,255,255,0.35);max-width:440px;line-height:1.8;}
+.scholar-btn{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);padding:10px 18px;border-radius:2px;font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.6);transition:all 0.2s;white-space:nowrap;align-self:flex-end;}
+.scholar-btn:hover{background:rgba(255,255,255,0.13);color:#fff;border-color:rgba(255,255,255,0.25);}
+
+
+
+/* BODY */
+.body{max-width:900px;margin:0 auto;padding:52px 56px 72px;}
+
+/* FILTER TABS */
+.filter-bar{display:flex;gap:4px;margin-bottom:40px;flex-wrap:wrap;}
+.filter-btn{padding:9px 18px;border:1px solid #ddd;border-radius:2px;font-family:'Montserrat',sans-serif;font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#888;background:#fff;cursor:pointer;transition:all 0.18s;}
+.filter-btn:hover{border-color:#000;color:#000;}
+.filter-btn.active{background:#000;color:#fff;border-color:#000;}
+
+/* PAPER GROUPS */
+.group{margin-bottom:0;}
+.group[data-hidden="true"]{display:none;}
+.group-header{display:flex;align-items:center;gap:14px;margin-bottom:0;cursor:pointer;user-select:none;padding:18px 0;border-bottom:2px solid #000;}
+.group-header:first-of-type{}
+.group-title{font-size:11px;font-weight:800;letter-spacing:0.18em;text-transform:uppercase;color:#000;}
+.group-count{font-size:10px;font-weight:500;color:#bbb;letter-spacing:0.06em;margin-left:auto;}
+.group-chevron{font-size:14px;color:#bbb;transition:transform 0.22s;flex-shrink:0;}
+.group-chevron.open{transform:rotate(180deg);}
+
+/* PAPER LIST */
+.paper-list{overflow:hidden;transition:max-height 0.35s cubic-bezier(0.4,0,0.2,1);}
+.paper-list.collapsed{max-height:0;}
+
+.paper{display:grid;grid-template-columns:36px 1fr 52px;gap:16px;align-items:center;padding:16px 0;border-bottom:1px solid #f0f0f0;cursor:pointer;}
+.paper:hover{background:#fafafa;margin:0 -12px;padding:16px 12px;}
+.paper-num{font-size:11px;font-weight:600;color:#ddd;letter-spacing:0.04em;}
+.paper-body{}
+.paper-title{font-size:13px;font-weight:600;color:#000;line-height:1.5;margin-bottom:3px;transition:color 0.15s;}
+.paper:hover .paper-title{color:#555;}
+.paper-journal{font-size:10px;font-weight:400;color:#aaa;font-style:italic;line-height:1.4;}
+.paper-arrow{font-size:13px;color:#ccc;text-align:right;transition:color 0.15s,transform 0.15s;}
+.paper:hover .paper-arrow{color:#000;transform:translateX(2px);}
+
+/* EXPANDED DETAIL */
+.paper-detail{max-height:0;overflow:hidden;transition:max-height 0.28s cubic-bezier(0.4,0,0.2,1);}
+.paper-detail.open{max-height:160px;}
+.detail-inner{padding:12px 52px 16px;background:#f9f9f9;border-bottom:1px solid #ebebeb;display:flex;align-items:center;justify-content:space-between;gap:20px;}
+.detail-year{font-size:10px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#999;}
+.detail-link{display:inline-block;font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#fff;background:#000;padding:8px 18px;border-radius:2px;transition:opacity 0.15s;white-space:nowrap;}
+.detail-link:hover{opacity:0.7;}
+
+/* SCHOLAR CTA */
+.scholar-cta{border:1px solid #000;padding:28px 32px;display:flex;align-items:center;justify-content:space-between;margin-top:48px;border-radius:2px;}
+.sc-label{font-size:9px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:#aaa;margin-bottom:5px;}
+.sc-title{font-size:15px;font-weight:700;color:#000;}
+.sc-link{display:inline-block;background:#000;color:#fff;padding:11px 22px;border-radius:2px;font-size:10px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;transition:opacity 0.15s;white-space:nowrap;}
+.sc-link:hover{opacity:0.7;}
+
+footer{background:#000;padding:28px 56px;display:flex;align-items:center;justify-content:space-between;border-top:1px solid #1a1a1a;}
+.foot-logo{font-size:14px;font-weight:800;color:#fff;}
+.foot-copy{font-size:10px;color:#444;}
+.foot-links{display:flex;gap:20px;}
+.foot-links a{font-size:10px;color:#555;transition:color 0.2s;}
+.foot-links a:hover{color:#fff;}
+
+/* ── MOBILE RESPONSIVE ── */
+@media (max-width: 768px) {
+  nav{padding:0 20px;}
+  .nav-links{gap:16px;}
+  .nav-links a{font-size:9px;}
+  .hero{padding:40px 20px 28px;}
+  .hero-inner{flex-direction:column;gap:20px;align-items:flex-start;}
+  .body{padding:36px 20px 56px;}
+  .filter-bar{gap:6px;}
+  .filter-btn{font-size:9px;padding:7px 12px;}
+  .paper{grid-template-columns:28px 1fr 32px;}
+  .scholar-cta{flex-direction:column;gap:16px;}
+  footer{flex-direction:column;gap:12px;padding:24px 20px;text-align:center;}
+}
+
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">Sai Teja Boppiniti</div>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="publications.html" class="nav-active">Publications</a></li>
+    <li><a href="media.html">Media</a></li>
+  </ul>
+</nav>
+
+<div class="hero">
+  <div class="hero-inner">
+    <div>
+      <div class="hero-tag">Research Portfolio</div>
+      <div class="hero-h1">Publications</div>
+      
+    </div>
+    <a class="scholar-btn" href="https://scholar.google.com/citations?user=H3XJtbcAAAAJ&hl=en" target="_blank">Google Scholar →</a>
+  </div>
+</div>
+
+
+<div class="body">
+
+  <!-- FILTER TABS -->
+  <div class="filter-bar">
+    <button class="filter-btn active" onclick="filterGroup('all',this)">All Papers</button>
+    <button class="filter-btn" onclick="filterGroup('healthcare',this)">Healthcare AI</button>
+    <button class="filter-btn" onclick="filterGroup('data',this)">Data Engineering &amp; Analytics</button>
+    <button class="filter-btn" onclick="filterGroup('edge',this)">Edge AI &amp; Emerging Systems</button>
+  </div>
+
+  <!-- GROUP 1: HEALTHCARE AI -->
+  <div class="group" data-group="healthcare">
+    <div class="group-header" onclick="toggleGroup(this)">
+      <span class="group-title">Healthcare AI</span>
+      <span class="group-count">12 papers</span>
+      <span class="group-chevron open">▾</span>
+    </div>
+    <div class="paper-list">
+
+      <div class="paper" onclick="toggleDetail(this)">
+        <div class="paper-num">01</div>
+        <div class="paper-body">
+          <div class="paper-title">Novel Smart Contact Lenses with Embedded AI for Pioneering Continuous Health Tracking and Disease Detection</div>
+          <div class="paper-journal">International Journal of Innovations in Engineering Research and Technology (IJIERT), 11(9) · 2024</div>
+        </div>
+        <div class="paper-arrow">→</div>
+      </div>
+      <div class="paper-detail"><div class="detail-inner"><span class="detail-year">2024</span><a class="detail-link" href="https://repo.ijiert.org/index.php/ijiert/article/view/3924" target="_blank">View Paper →</a></div></div>
+
+      <div class="paper" onclick="toggleDetail(this)">
+        <div class="paper-num">02</div>
+        <div class="paper-body">
+          <div class="paper-title">OcuMimetic: A Novel Smart Lens with Biometrics and Edge AI Technologies for Multimodal Health Monitoring</div>
+          <div class="paper-journal">ResearchGate · 2025</div>
+        </div>
+        <div class="paper-arrow">→</div>
+      </div>
+      <div class="paper-detail"><div class="detail-inner"><span class="detail-year">2025</span><a class="detail-link" href="https://www.researchgate.net/publication/384280814" target="_blank">View Paper →</a></div></div>
+
+      <div class="paper" onclick="toggleDetail(this)">
+        <div class="paper-num">03</div>
+        <div class="paper-body">
+          <div class="paper-title">Ethical Dimensions of AI in Healthcare: Balancing Innovation and Responsibility</div>
+          <div class="paper-journal">International Machine Learning Journal and Computer Engineering, 5(5) · 2022</div>
+        </div>
+        <div class="paper-arrow">→</div>
+      </div>
+      <div class="paper-detail"><div class="detail-inner"><span class="detail-year">2022</span><a class="detail-link" href="https://scholar.google.com/citations?user=H3XJtbcAAAAJ&hl=en" target="_blank">View Paper →</a></div></div>
+
+      <div class="paper" onclick="toggleDetail(this)">
+        <div class="paper-num">04</div>
+        <div class="paper-body">
+          <div class="paper-title">AI-Powered Disease Outbreak Prediction Using Environmental and Social Data</div>
+          <div class="paper-journal">International Transactions in Machine Learning, 5(5) · 2023</div>
+        </div>
+        <div class="paper-arrow">→</div>
+      </div>
+      <div class="paper-detail"><div class="detail-inner"><span class="detail-year">2023</span><a class="detail-link" href="https://isjr.co.in/index.php/ITML/article/view/294" target="_blank">View Paper →</a></div></div>
+
+      <div class="paper" onclick="toggleDetail(this)">
+        <div class="paper-num">05</div>
+        <div class="paper-body">
+          <div class="paper-title">AI for Real-Time Data Analytics in Critical Healthcare Systems</div>
+          <div class="paper-journal">International Journal of Sustainable Development in Computing Science, 4(4) · 2023</div>
+        </div>
+        <div class="paper-arrow">→</div>
+      </div>
+      <div class="paper-detail"><div class="detail-inner"><span class="detail-year">2023</span><a class="detail-link" href="https://scholar.google.com/citations?user=H3XJtbcAAAAJ&hl=en" target="_blank">View Paper →</a></div></div>
+
+      <div class="paper" onclick="toggleDetail(this)">
+        <div class="paper-num">06</div>
+        <div class="paper-body">
+          <div class="paper-title">Revolutionizing Healthcare Data Management: A Novel Master Data Architecture for the Digital Era</div>
+          <div class="paper-journal">Transactions on Latest Trends in IoT, 2(2) · 2019</div>
+        </div>
+        <div class="paper-arrow">→</div>
+      </div>
+      <div class="paper-detail"><div class="detail-inner"><span class="detail-year">2019</span><a class="detail-link" href="https://www.researchgate.net/publication/387377679" target="_blank">View Paper →</a></div></div>
+
+      <div class="paper" onclick="toggleDetail(this)">
+        <div class="paper-num">07</div>
+        <div class="paper-body">
+          <div class="paper-title">AI for Remote Patient Monitoring: Bridging the Gap in Chronic Disease Management</div>
+          <div class="paper-journal">International Machine Learning Journal and Computer Engineering, 3(3) · 2020</div>
+        </div>
+        <div class="paper-arrow">→</div>
+      </div>
+      <div class="paper-detail"><div class="detail-inner"><span class="detail-year">2020</span><a class="detail-link" href="https://scholar.google.com/citations?user=H3XJtbcAAAAJ&hl=en" target="_blank">View Paper →</a></div></div>
+
+      <div class="paper" onclick="toggleDetail(this)">
+        <div class="paper-num">08</div>
+        <div class="paper-body">
+          <div class="paper-title">Natural Language Processing in Healthcare: Enhancing Clinical Decision Support Systems</div>
+          <div class="paper-journal">International Numeric Journal of Machine Learning and Robots, 3(3) · 2019</div>
+        </div>
+        <div class="paper-arrow">→</div>
+      </div>
+      <div class="paper-detail"><div class="detail-inner"><span class="detail-year">2019</span><a class="detail-link" href="https://injmr.com/index.php/fewfewf/article/view/154" target="_blank">View Paper →</a></div></div>
+
+      <div class="paper" onclick="toggleDetail(this)">
+        <div class="paper-num">09</div>
+        <div class="paper-body">
+          <div class="paper-title">AI-Driven Drug Discovery: Accelerating the Path to New Therapeutics</div>
+          <div class="paper-journal">International Machine Learning Journal and Computer Engineering, 1(1) · 2018</div>
+        </div>
+        <div class="paper-arrow">→</div>
+      </div>
+      <div class="paper-detail"><div class="detail-inner"><span class="detail-year">2018</span><a class="detail-link" href="https://scholar.google.com/citations?user=H3XJtbcAAAAJ&hl=en" target="_blank">View Paper →</a></div></div>
+
+      <div class="paper" onclick="toggleDetail(this)">
+        <div class="paper-num">10</div>
+        <div class="paper-body">
+          <div class="paper-title">AI-Powered Predictive Analytics for Personalized Healthcare</div>
+          <div class="paper-journal">International Numeric Journal of Machine Learning and Robots, 2(2) · 2018</div>
+        </div>
+        <div class="paper-arrow">→</div>
+      </div>
+      <div class="paper-detail"><div class="detail-inner"><span class="detail-year">2018</span><a class="detail-link" href="https://injmr.com/index.php/fewfewf/article/view/153" target="_blank">View Paper →</a></div></div>
+
+      <div class="paper" onclick="toggleDetail(this)">
+        <div class="paper-num">11</div>
+        <div class="paper-body">
+          <div class="paper-title">Unraveling the Complexities of Healthcare Data Governance: Strategies, Challenges, and Future Directions</div>
+          <div class="paper-journal">2018</div>
+        </div>
+        <div class="paper-arrow">→</div>
+      </div>
+      <div class="paper-detail"><div class="detail-inner"><span class="detail-year">2018</span><a class="detail-link" href="https://scholar.google.com/citations?user=H3XJtbcAAAAJ&hl=en" target="_blank">View Paper →</a></div></div>
+
+      <div class="paper" onclick="toggleDetail(this)">
+        <div class="paper-num">12</div>
+        <div class="paper-body">
+          <div class="paper-title">Revolutionizing Diagnostics: The Role of AI in Early Disease Detection</div>
+          <div class="paper-journal">International Numeric Journal of Machine Learning and Robots, 1(1) · 2017</div>
+        </div>
+        <div class="paper-arrow">→</div>
+      </div>
+      <div class="paper-detail"><div class="detail-inner"><span class="detail-year">2017</span><a class="detail-link" href="https://injmr.com/index.php/fewfewf/article/view/152" target="_blank">View Paper →</a></div></div>
+
+    </div>
+  </div>
+
+  <!-- GROUP 2: DATA ENGINEERING & ANALYTICS -->
+  <div class="group" data-group="data">
+    <div class="group-header" onclick="toggleGroup(this)">
+      <span class="group-title">Data Engineering &amp; Analytics</span>
+      <span class="group-count">11 papers</span>
+      <span class="group-chevron open">▾</span>
+    </div>
+    <div class="paper-list">
+
+      <div class="paper" onclick="toggleDetail(this)">
+        <div class="paper-num">13</div>
+        <div class="paper-body">
+          <div class="paper-title">Real-Time Data Analytics with AI: Leveraging Stream Processing for Dynamic Decision Support</div>
+          <div class="paper-journal">International Journal of Management Education for Sustainable Development, 4 · 2021</div>
+        </div>
+        <div class="paper-arrow">→</div>
+      </div>
+      <div class="paper-detail"><div class="detail-inner"><span class="detail-year">2021</span><a class="detail-link" href="https://www.researchgate.net/publication/387222925" target="_blank">View Paper →</a></div></div>
+
+      <div class="paper" onclick="toggleDetail(this)">
+        <div class="paper-num">14</div>
+        <div class="paper-body">
+          <div class="paper-title">Machine Learning for Predictive Analytics: Enhancing Data-Driven Decision-Making Across Industries</div>
+          <div class="paper-journal">International Journal of Sustainable Development in Computing Science, 1(3) · 2019</div>
+        </div>
+        <div class="paper-arrow">→</div>
+      </div>
+      <div class="paper-detail"><div class="detail-inner"><span class="detail-year">2019</span><a class="detail-link" href="https://www.ijsdcs.com/index.php/ijsdcs/article/view/586" target="_blank">View Paper →</a></div></div>
+
+      <div class="paper" onclick="toggleDetail(this)">
+        <div class="paper-num">15</div>
+        <div class="paper-body">
+          <div class="paper-title">Big Data Meets Machine Learning: Strategies for Efficient Data Processing and Analysis in Large Datasets</div>
+          <div class="paper-journal">International Journal of Creative Research in Computer Technology and Design · 2020</div>
+        </div>
+        <div class="paper-arrow">→</div>
+      </div>
+      <div class="paper-detail"><div class="detail-inner"><span class="detail-year">2020</span><a class="detail-link" href="https://scholar.google.com/citations?user=H3XJtbcAAAAJ&hl=en" target="_blank">View Paper →</a></div></div>
+
+      <div class="paper" onclick="toggleDetail(this)">
+        <div class="paper-num">16</div>
+        <div class="paper-body">
+          <div class="paper-title">Data Ethics in AI: Addressing Challenges in Machine Learning and Data Governance for Responsible Data Science</div>
+          <div class="paper-journal">International Scientific Journal for Research, 5(5) · 2023</div>
+        </div>
+        <div class="paper-arrow">→</div>
+      </div>
+      <div class="paper-detail"><div class="detail-inner"><span class="detail-year">2023</span><a class="detail-link" href="https://isjr.co.in/index.php/ISJR/article/view/257" target="_blank">View Paper →</a></div></div>
+
+      <div class="paper" onclick="toggleDetail(this)">
+        <div class="paper-num">17</div>
+        <div class="paper-body">
+          <div class="paper-title">Exploring the Synergy of AI, ML, and Data Analytics in Enhancing Customer Experience and Personalization</div>
+          <div class="paper-journal">International Machine Learning Journal and Computer Engineering, 5(5) · 2022</div>
+        </div>
+        <div class="paper-arrow">→</div>
+      </div>
+      <div class="paper-detail"><div class="detail-inner"><span class="detail-year">2022</span><a class="detail-link" href="https://www.researchgate.net/publication/387222659" target="_blank">View Paper →</a></div></div>
+
+      <div class="paper" onclick="toggleDetail(this)">
+        <div class="paper-num">18</div>
+        <div class="paper-body">
+          <div class="paper-title">Privacy-Preserving Techniques for IoT-Enabled Urban Health Monitoring: A Comparative Analysis</div>
+          <div class="paper-journal">International Scientific Journal for Research · 2018</div>
+        </div>
+        <div class="paper-arrow">→</div>
+      </div>
+      <div class="paper-detail"><div class="detail-inner"><span class="detail-year">2018</span><a class="detail-link" href="https://scholar.google.com/citations?user=H3XJtbcAAAAJ&hl=en" target="_blank">View Paper →</a></div></div>
+
+      <div class="paper" onclick="toggleDetail(this)">
+        <div class="paper-num">19</div>
+        <div class="paper-body">
+          <div class="paper-title">Ethical Implications of Artificial Intelligence: A Review of Early Research and Perspectives</div>
+          <div class="paper-journal">Available at SSRN · 2022</div>
+        </div>
+        <div class="paper-arrow">→</div>
+      </div>
+      <div class="paper-detail"><div class="detail-inner"><span class="detail-year">2022</span><a class="detail-link" href="https://scholar.google.com/citations?user=H3XJtbcAAAAJ&hl=en" target="_blank">View Paper →</a></div></div>
+
+      <div class="paper" onclick="toggleDetail(this)">
+        <div class="paper-num">20</div>
+        <div class="paper-body">
+          <div class="paper-title">Integrating a Patented AI OCR Technology into Clinical Workflows: Accuracy, Efficiency, and User Satisfaction</div>
+          <div class="paper-journal">International Journal of Scientific Development and Research, 10(9) · 2025</div>
+        </div>
+        <div class="paper-arrow">→</div>
+      </div>
+      <div class="paper-detail"><div class="detail-inner"><span class="detail-year">2025</span><a class="detail-link" href="https://www.researchgate.net/publication/395922280" target="_blank">View Paper →</a></div></div>
+
+      <div class="paper" onclick="toggleDetail(this)">
+        <div class="paper-num">21</div>
+        <div class="paper-body">
+          <div class="paper-title">Human-Centric Design for IoT-Enabled Urban Health Solutions: Beyond Data Collection</div>
+          <div class="paper-journal">International Transactions in Artificial Intelligence, 2(2) · 2018</div>
+        </div>
+        <div class="paper-arrow">→</div>
+      </div>
+      <div class="paper-detail"><div class="detail-inner"><span class="detail-year">2018</span><a class="detail-link" href="https://scholar.google.com/citations?user=H3XJtbcAAAAJ&hl=en" target="_blank">View Paper →</a></div></div>
+
+      <div class="paper" onclick="toggleDetail(this)">
+        <div class="paper-num">22</div>
+        <div class="paper-body">
+          <div class="paper-title">Core Standards and Applications of Big Data Analytics</div>
+          <div class="paper-journal">International Journal of Sustainable Development in Computer Science · 2016</div>
+        </div>
+        <div class="paper-arrow">→</div>
+      </div>
+      <div class="paper-detail"><div class="detail-inner"><span class="detail-year">2016</span><a class="detail-link" href="https://scholar.google.com/citations?user=H3XJtbcAAAAJ&hl=en" target="_blank">View Paper →</a></div></div>
+
+      <div class="paper" onclick="toggleDetail(this)">
+        <div class="paper-num">23</div>
+        <div class="paper-body">
+          <div class="paper-title">Revolutionizing Industries with Machine Learning: A Global Insight</div>
+          <div class="paper-journal">International Journal of Sustainable Development in Computer Science · 2015</div>
+        </div>
+        <div class="paper-arrow">→</div>
+      </div>
+      <div class="paper-detail"><div class="detail-inner"><span class="detail-year">2015</span><a class="detail-link" href="https://scholar.google.com/citations?user=H3XJtbcAAAAJ&hl=en" target="_blank">View Paper →</a></div></div>
+
+    </div>
+  </div>
+
+  <!-- GROUP 3: EDGE AI & EMERGING SYSTEMS -->
+  <div class="group" data-group="edge">
+    <div class="group-header" onclick="toggleGroup(this)">
+      <span class="group-title">Edge AI &amp; Emerging Systems</span>
+      <span class="group-count">10 papers</span>
+      <span class="group-chevron open">▾</span>
+    </div>
+    <div class="paper-list">
+
+      <div class="paper" onclick="toggleDetail(this)">
+        <div class="paper-num">24</div>
+        <div class="paper-body">
+          <div class="paper-title">AI-Enhanced Predictive Maintenance for Industrial Machinery Using IoT Data</div>
+          <div class="paper-journal">International Transactions in Artificial Intelligence, 7(7) · 2023</div>
+        </div>
+        <div class="paper-arrow">→</div>
+      </div>
+      <div class="paper-detail"><div class="detail-inner"><span class="detail-year">2023</span><a class="detail-link" href="https://isjr.co.in/index.php/ITAI/article/view/298" target="_blank">View Paper →</a></div></div>
+
+      <div class="paper" onclick="toggleDetail(this)">
+        <div class="paper-num">25</div>
+        <div class="paper-body">
+          <div class="paper-title">Edge AI for Real-Time Object Detection in Autonomous Vehicles</div>
+          <div class="paper-journal">Transactions on Recent Developments in Health Sectors, 6(6) · 2023</div>
+        </div>
+        <div class="paper-arrow">→</div>
+      </div>
+      <div class="paper-detail"><div class="detail-inner"><span class="detail-year">2023</span><a class="detail-link" href="https://isjr.co.in/index.php/TRDHS/article/view/289" target="_blank">View Paper →</a></div></div>
+
+      <div class="paper" onclick="toggleDetail(this)">
+        <div class="paper-num">26</div>
+        <div class="paper-body">
+          <div class="paper-title">AI-Based Cybersecurity for Threat Detection in Real-Time Networks</div>
+          <div class="paper-journal">International Journal of Machine Learning for Sustainable Development, 3(2) · 2021</div>
+        </div>
+        <div class="paper-arrow">→</div>
+      </div>
+      <div class="paper-detail"><div class="detail-inner"><span class="detail-year">2021</span><a class="detail-link" href="https://scholar.google.com/citations?user=H3XJtbcAAAAJ&hl=en" target="_blank">View Paper →</a></div></div>
+
+      <div class="paper" onclick="toggleDetail(this)">
+        <div class="paper-num">27</div>
+        <div class="paper-body">
+          <div class="paper-title">AI for Dynamic Traffic Flow Optimization in Smart Cities</div>
+          <div class="paper-journal">International Journal of Sustainable Development in Computing Science, 4(4) · 2022</div>
+        </div>
+        <div class="paper-arrow">→</div>
+      </div>
+      <div class="paper-detail"><div class="detail-inner"><span class="detail-year">2022</span><a class="detail-link" href="https://ijsdcs.com/index.php/ijsdcs/article/view/627" target="_blank">View Paper →</a></div></div>
+
+      <div class="paper" onclick="toggleDetail(this)">
+        <div class="paper-num">28</div>
+        <div class="paper-body">
+          <div class="paper-title">Artificial Intelligence in Financial Markets: Algorithms and Applications</div>
+          <div class="paper-journal">Available at SSRN · 2021</div>
+        </div>
+        <div class="paper-arrow">→</div>
+      </div>
+      <div class="paper-detail"><div class="detail-inner"><span class="detail-year">2021</span><a class="detail-link" href="https://www.researchgate.net/publication/385034876" target="_blank">View Paper →</a></div></div>
+
+      <div class="paper" onclick="toggleDetail(this)">
+        <div class="paper-num">29</div>
+        <div class="paper-body">
+          <div class="paper-title">A Survey on Explainable AI: Techniques and Challenges</div>
+          <div class="paper-journal">Novateur Publications, IJIERT · 2020</div>
+        </div>
+        <div class="paper-arrow">→</div>
+      </div>
+      <div class="paper-detail"><div class="detail-inner"><span class="detail-year">2020</span><a class="detail-link" href="https://www.researchgate.net/publication/385037063" target="_blank">View Paper →</a></div></div>
+
+      <div class="paper" onclick="toggleDetail(this)">
+        <div class="paper-num">30</div>
+        <div class="paper-body">
+          <div class="paper-title">Evolution of Reinforcement Learning: From Q-Learning to Deep Reinforcement Learning</div>
+          <div class="paper-journal">Available at SSRN 5061696 · 2021</div>
+        </div>
+        <div class="paper-arrow">→</div>
+      </div>
+      <div class="paper-detail"><div class="detail-inner"><span class="detail-year">2021</span><a class="detail-link" href="https://www.researchgate.net/publication/387111500" target="_blank">View Paper →</a></div></div>
+
+      <div class="paper" onclick="toggleDetail(this)">
+        <div class="paper-num">31</div>
+        <div class="paper-body">
+          <div class="paper-title">AI and Robotics in Surgery: Enhancing Precision and Outcomes</div>
+          <div class="paper-journal">International Numeric Journal of Machine Learning and Robots, 5(5) · 2021</div>
+        </div>
+        <div class="paper-arrow">→</div>
+      </div>
+      <div class="paper-detail"><div class="detail-inner"><span class="detail-year">2021</span><a class="detail-link" href="https://injmr.com/index.php/fewfewf/article/view/156" target="_blank">View Paper →</a></div></div>
+
+      <div class="paper" onclick="toggleDetail(this)">
+        <div class="paper-num">32</div>
+        <div class="paper-body">
+          <div class="paper-title">AI in Mental Health: Opportunities and Challenges in Psychological Care</div>
+          <div class="paper-journal">International Numeric Journal of Machine Learning and Robots, 4(4) · 2020</div>
+        </div>
+        <div class="paper-arrow">→</div>
+      </div>
+      <div class="paper-detail"><div class="detail-inner"><span class="detail-year">2020</span><a class="detail-link" href="https://injmr.com/index.php/fewfewf/article/view/155" target="_blank">View Paper →</a></div></div>
+
+      <div class="paper" onclick="toggleDetail(this)">
+        <div class="paper-num">33</div>
+        <div class="paper-body">
+          <div class="paper-title">Emerging Paradigms in Robotics: Fundamentals and Future Applications</div>
+          <div class="paper-journal">Transactions on Latest Trends in Health Sector, 6(6) · 2014</div>
+        </div>
+        <div class="paper-arrow">→</div>
+      </div>
+      <div class="paper-detail"><div class="detail-inner"><span class="detail-year">2014</span><a class="detail-link" href="https://scholar.google.com/citations?user=H3XJtbcAAAAJ&hl=en" target="_blank">View Paper →</a></div></div>
+
+    </div>
+  </div>
+
+  <div class="scholar-cta">
+    <div>
+      <div class="sc-label">Full publication list with citation metrics</div>
+      <div class="sc-title">View complete profile on Google Scholar</div>
+    </div>
+    <a class="sc-link" href="https://scholar.google.com/citations?user=H3XJtbcAAAAJ&hl=en" target="_blank">Google Scholar →</a>
+  </div>
+
+</div>
+
+<footer>
+  <div class="foot-logo">Sai Teja Boppiniti</div>
+  <div class="foot-copy">© 2025 Sai Teja Boppiniti · All Rights Reserved · saitejaboppiniti.com</div>
+  <div class="foot-links">
+    <a href="https://scholar.google.com/citations?user=H3XJtbcAAAAJ&hl=en" target="_blank">Google Scholar</a>
+    <a href="https://www.linkedin.com/in/saitejaboppiniti" target="_blank">LinkedIn</a>
+  </div>
+</footer>
+
+<script>
+// On load: collapse all groups
+window.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.paper-list').forEach(list => {
+    list.style.maxHeight = '0';
+    list.classList.add('collapsed');
+  });
+  document.querySelectorAll('.group-chevron').forEach(c => c.classList.remove('open'));
+});
+
+// Toggle individual paper detail
+function toggleDetail(paperEl) {
+  const detail = paperEl.nextElementSibling;
+  const arrow = paperEl.querySelector('.paper-arrow');
+  const isOpen = detail.classList.contains('open');
+  const allDetails = paperEl.closest('.paper-list').querySelectorAll('.paper-detail');
+  const allArrows = paperEl.closest('.paper-list').querySelectorAll('.paper-arrow');
+  allDetails.forEach(d => d.classList.remove('open'));
+  allArrows.forEach(a => { a.style.transform = ''; a.style.color = ''; });
+  if (!isOpen) {
+    detail.classList.add('open');
+    arrow.style.transform = 'rotate(90deg)';
+    arrow.style.color = '#000';
+  }
+}
+
+// Toggle group open/close
+function toggleGroup(headerEl) {
+  const list = headerEl.nextElementSibling;
+  const chevron = headerEl.querySelector('.group-chevron');
+  const isOpen = chevron.classList.contains('open');
+  if (isOpen) {
+    list.style.maxHeight = list.scrollHeight + 'px';
+    requestAnimationFrame(() => { list.style.maxHeight = '0'; });
+    chevron.classList.remove('open');
+    setTimeout(() => list.classList.add('collapsed'), 360);
+  } else {
+    list.classList.remove('collapsed');
+    list.style.maxHeight = '0';
+    requestAnimationFrame(() => {
+      list.style.maxHeight = list.scrollHeight + 'px';
+    });
+    setTimeout(() => list.style.maxHeight = '', 360);
+    chevron.classList.add('open');
+  }
+}
+
+// Filter tabs — show only matching group, expand it; hide others collapsed
+function filterGroup(topic, btn) {
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+
+  document.querySelectorAll('.group').forEach(g => {
+    const list = g.querySelector('.paper-list');
+    const chevron = g.querySelector('.group-chevron');
+
+    if (topic === 'all') {
+      // show all but keep them collapsed — user clicks header to expand
+      g.style.display = '';
+      list.style.maxHeight = '0';
+      list.classList.add('collapsed');
+      chevron.classList.remove('open');
+    } else if (g.dataset.group === topic) {
+      // show and expand matching group
+      g.style.display = '';
+      list.classList.remove('collapsed');
+      list.style.maxHeight = '0';
+      requestAnimationFrame(() => { list.style.maxHeight = list.scrollHeight + 'px'; });
+      setTimeout(() => list.style.maxHeight = '', 360);
+      chevron.classList.add('open');
+    } else {
+      // hide non-matching groups entirely
+      g.style.display = 'none';
+    }
+  });
+}
+</script>
+
+</body>
+</html>
