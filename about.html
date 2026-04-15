@@ -2,7 +2,9 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"/>
-<meta name="description" content="About Sai Teja Boppiniti — Senior Data Engineer at The Kroger Co. and independent AI/ML researcher with over a decade of experience in data engineering, machine learning, and healthcare AI."/>
+<link rel="icon" type="image/svg+xml" href="favicon.svg"/>
+
+<meta name="description" content="About Sai Teja Boppiniti — Senior Data Engineer at The Kroger Co. Engineering large-scale data systems and advancing research in healthcare AI and real-time machine learning."/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 <title>About | Sai Teja Boppiniti</title>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300&display=swap" rel="stylesheet"/>
@@ -99,7 +101,34 @@ footer{background:#000;padding:28px 56px;display:flex;align-items:center;justify
   footer{flex-direction:column;gap:12px;padding:24px 20px;text-align:center;}
 }
 
+
+
+/* ── PAGE TRANSITIONS ── */
+@keyframes pageFadeIn{from{opacity:0;}to{opacity:1;}}
+body{animation:pageFadeIn 0.4s cubic-bezier(0.4,0,0.2,1) both;}
+.page-leave{opacity:0;transition:opacity 0.3s cubic-bezier(0.4,0,0.2,1);}
+
+/* ── SCROLL ANIMATIONS ── */
+.reveal{opacity:0;transform:translateY(32px);transition:opacity 0.7s cubic-bezier(0.4,0,0.2,1),transform 0.7s cubic-bezier(0.4,0,0.2,1);}
+.reveal.visible{opacity:1;transform:translateY(0);}
+.reveal-left{opacity:0;transform:translateX(-32px);transition:opacity 0.7s cubic-bezier(0.4,0,0.2,1),transform 0.7s cubic-bezier(0.4,0,0.2,1);}
+.reveal-left.visible{opacity:1;transform:translateX(0);}
+.reveal-right{opacity:0;transform:translateX(32px);transition:opacity 0.7s cubic-bezier(0.4,0,0.2,1),transform 0.7s cubic-bezier(0.4,0,0.2,1);}
+.reveal-right.visible{opacity:1;transform:translateX(0);}
+.delay-1{transition-delay:0.1s;}.delay-2{transition-delay:0.2s;}.delay-3{transition-delay:0.3s;}.delay-4{transition-delay:0.4s;}.delay-5{transition-delay:0.5s;}
+
 </style>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://saitejaboppiniti.com/about.html"/>
+<meta property="og:title" content="About — Sai Teja Boppiniti"/>
+<meta property="og:description" content="Senior Data Engineer and AI/ML Researcher with over a decade of experience in data engineering, machine learning, and healthcare AI."/>
+<meta property="og:image" content="https://saitejaboppiniti.com/profile.jpg"/>
+<meta property="og:image:width" content="800"/>
+<meta property="og:image:height" content="800"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="About — Sai Teja Boppiniti"/>
+<meta name="twitter:description" content="Senior Data Engineer and AI/ML Researcher with over a decade of experience in data engineering, machine learning, and healthcare AI."/>
+<meta name="twitter:image" content="https://saitejaboppiniti.com/profile.jpg"/>
 </head>
 <body>
 
@@ -125,7 +154,7 @@ footer{background:#000;padding:28px 56px;display:flex;align-items:center;justify
 
   <!-- LEFT: Photo + credentials -->
   <div>
-    <div class="sidebar-section">
+    <div class="sidebar-section reveal-left">
       <div class="sidebar-label">Recognition</div>
       <div class="cred-item"><div class="cred-dot"></div><div class="cred-text">Research Fellow</div></div>
       <div class="cred-item"><div class="cred-dot"></div><div class="cred-text">Editorial Board Member</div></div>
@@ -143,14 +172,14 @@ footer{background:#000;padding:28px 56px;display:flex;align-items:center;justify
   <div>
     <div class="section-tag">Bio</div>
     <div class="section-h2">About Me</div>
-    <p class="bio-p">I'm a Senior Data Engineer and AI/ML researcher with over a decade of experience building systems that actually work at scale — and publishing research on why they should. My day-to-day involves designing data pipelines, building machine learning models, and figuring out how AI can move healthcare from reactive to proactive.</p>
+    <p class="bio-p reveal">I'm a Senior Data Engineer and AI/ML researcher with over a decade of experience building systems that actually work at scale — and publishing research on why they should. My day-to-day involves designing data pipelines, building machine learning models, and figuring out how AI can move healthcare from reactive to proactive.</p>
     <p class="bio-p">I've been doing this in both academia and industry. On the research side, I've published 33 peer-reviewed papers and accumulated over 1,000+ citations. On the engineering side, I'm currently a <strong>Senior Data Engineer at The Kroger Co.</strong>, working on large-scale data infrastructure that powers enterprise decision-making.</p>
     <p class="bio-p">One of the projects I'm most proud of is developing AI-embedded smart contact lenses that continuously monitor health metrics in real time — glucose levels, intraocular pressure, ocular health indicators. That work led to a published paper, international press coverage across three continents, and a registered patent.</p>
 
     <!-- EXPERIENCE TIMELINE -->
     <div class="timeline">
       <div class="tl-label">Experience</div>
-      <div class="tl-item">
+      <div class="tl-item reveal">
         <div class="tl-year">2018 – Present</div>
         <div>
           <div class="tl-role">Senior Data Engineer</div>
@@ -158,7 +187,7 @@ footer{background:#000;padding:28px 56px;display:flex;align-items:center;justify
           <div class="tl-desc">Designing and maintaining large-scale data pipelines and cloud infrastructure. Working with AI/ML systems for enterprise analytics and decision support.</div>
         </div>
       </div>
-      <div class="tl-item">
+      <div class="tl-item reveal delay-1">
         <div class="tl-year">2014 – Present</div>
         <div>
           <div class="tl-role">Independent Researcher</div>
@@ -170,14 +199,14 @@ footer{background:#000;padding:28px 56px;display:flex;align-items:center;justify
     <!-- EDUCATION TIMELINE -->
     <div class="edu-block">
       <div class="edu-label">Education</div>
-      <div class="edu-item">
+      <div class="edu-item reveal">
         <div class="edu-year">MS</div>
         <div>
           <div class="edu-deg">Master of Science — Information Systems</div>
           <div class="edu-uni">Pace University, New York, NY</div>
         </div>
       </div>
-      <div class="edu-item">
+      <div class="edu-item reveal delay-1">
         <div class="edu-year">BE</div>
         <div>
           <div class="edu-deg">Bachelor of Engineering — Computer Science &amp; Engineering</div>
@@ -193,7 +222,7 @@ footer{background:#000;padding:28px 56px;display:flex;align-items:center;justify
 <div class="contact-section">
   <div class="cs-inner">
     <div class="cs-tag">Contact</div>
-    <div class="cs-h2">Get in Touch</div>
+    <div class="cs-h2 reveal">Get in Touch</div>
     <p class="cs-p">For research collaboration, data engineering discussions, or general questions — send a message and I'll get back to you.</p>
     <div class="cf">
       <div class="cf-row">
@@ -224,5 +253,35 @@ footer{background:#000;padding:28px 56px;display:flex;align-items:center;justify
     <a href="https://www.linkedin.com/in/saitejaboppiniti" target="_blank">LinkedIn</a>
   </div>
 </footer>
+<script>
+(function(){
+  var obs=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}
+    });
+  },{threshold:0.12});
+  document.querySelectorAll('.reveal,.reveal-left,.reveal-right').forEach(function(el){obs.observe(el);});
+})();
+</script>
+<script>
+(function(){
+  // Fade out before navigating to new page
+  document.querySelectorAll('a').forEach(function(link){
+    var href = link.getAttribute('href');
+    if(!href) return;
+    // Only internal page links
+    if(href.indexOf('http') === -1 && href.indexOf('#') === -1 && href !== ''){
+      link.addEventListener('click', function(e){
+        e.preventDefault();
+        document.body.style.transition = 'opacity 0.3s cubic-bezier(0.4,0,0.2,1)';
+        document.body.style.opacity = '0';
+        setTimeout(function(){
+          window.location.href = href;
+        }, 300);
+      });
+    }
+  });
+})();
+</script>
 </body>
 </html>

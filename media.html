@@ -2,6 +2,8 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"/>
+<link rel="icon" type="image/svg+xml" href="favicon.svg"/>
+
 <meta name="description" content="Media coverage of Sai Teja Boppiniti — featured in Times of India, Deccan Chronicle, Jagran, and BD Tech Talks for research on AI-embedded smart contact lenses for health monitoring."/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 <title>Media | Sai Teja Boppiniti</title>
@@ -77,7 +79,34 @@ footer{background:#000;padding:28px 56px;display:flex;align-items:center;justify
   footer{flex-direction:column;gap:12px;padding:24px 20px;text-align:center;}
 }
 
+
+
+/* ── PAGE TRANSITIONS ── */
+@keyframes pageFadeIn{from{opacity:0;}to{opacity:1;}}
+body{animation:pageFadeIn 0.4s cubic-bezier(0.4,0,0.2,1) both;}
+.page-leave{opacity:0;transition:opacity 0.3s cubic-bezier(0.4,0,0.2,1);}
+
+/* ── SCROLL ANIMATIONS ── */
+.reveal{opacity:0;transform:translateY(32px);transition:opacity 0.7s cubic-bezier(0.4,0,0.2,1),transform 0.7s cubic-bezier(0.4,0,0.2,1);}
+.reveal.visible{opacity:1;transform:translateY(0);}
+.reveal-left{opacity:0;transform:translateX(-32px);transition:opacity 0.7s cubic-bezier(0.4,0,0.2,1),transform 0.7s cubic-bezier(0.4,0,0.2,1);}
+.reveal-left.visible{opacity:1;transform:translateX(0);}
+.reveal-right{opacity:0;transform:translateX(32px);transition:opacity 0.7s cubic-bezier(0.4,0,0.2,1),transform 0.7s cubic-bezier(0.4,0,0.2,1);}
+.reveal-right.visible{opacity:1;transform:translateX(0);}
+.delay-1{transition-delay:0.1s;}.delay-2{transition-delay:0.2s;}.delay-3{transition-delay:0.3s;}.delay-4{transition-delay:0.4s;}.delay-5{transition-delay:0.5s;}
+
 </style>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://saitejaboppiniti.com/media.html"/>
+<meta property="og:title" content="Media — Sai Teja Boppiniti"/>
+<meta property="og:description" content="Press coverage in Times of India, Deccan Chronicle, Jagran and BD Tech Talks for research on AI-embedded smart contact lenses for health monitoring."/>
+<meta property="og:image" content="https://saitejaboppiniti.com/profile.jpg"/>
+<meta property="og:image:width" content="800"/>
+<meta property="og:image:height" content="800"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Media — Sai Teja Boppiniti"/>
+<meta name="twitter:description" content="Press coverage in Times of India, Deccan Chronicle, Jagran and BD Tech Talks for research on AI-embedded smart contact lenses for health monitoring."/>
+<meta name="twitter:image" content="https://saitejaboppiniti.com/profile.jpg"/>
 </head>
 <body>
 
@@ -102,27 +131,27 @@ footer{background:#000;padding:28px 56px;display:flex;align-items:center;justify
   <!-- PRESS -->
   <div class="sec-label">Press Coverage</div>
   <div class="press-list">
-    <div class="press-row">
+    <div class="press-row reveal">
       <div><div class="press-pub">Times of India</div><div class="press-country">India</div></div>
       <div class="press-headline">AI-driven health monitoring: Shift from reactive to proactive care</div>
       <a class="press-link" href="https://timesofindia.indiatimes.com/city/mumbai/ai-driven-health-monitoring-shift-from-reactive-to-proactive-care/articleshow/113911499.cms" target="_blank">Read →</a>
     </div>
-    <div class="press-row">
+    <div class="press-row reveal">
       <div><div class="press-pub">Deccan Chronicle</div><div class="press-country">India</div></div>
       <div class="press-headline">Indian Researcher Develops Smart Contact Lenses with AI for Continuous Health Tracking and Disease Detection</div>
       <a class="press-link" href="https://www.deccanchronicle.com/in-focus/indian-researcher-develops-smart-contact-lenses-with-ai-for-continuous-health-tracking-and-disease-detection-1827211" target="_blank">Read →</a>
     </div>
-    <div class="press-row">
+    <div class="press-row reveal">
       <div><div class="press-pub">Jagran</div><div class="press-country">India</div></div>
       <div class="press-headline">Scientists Experiment to Monitor Diabetes Using AI Technology</div>
       <a class="press-link" href="https://www.jagran.com/delhi/new-delhi-city-ncr-scientists-experiment-to-monitor-diabetes-using-ai-technology-23807495.html" target="_blank">Read →</a>
     </div>
-    <div class="press-row">
+    <div class="press-row reveal">
       <div><div class="press-pub">BD Tech Talks</div><div class="press-country">International</div></div>
       <div class="press-headline">AI-powered smart contact lenses: What will they be like?</div>
       <a class="press-link" href="https://bdtechtalks.com/2024/11/08/ai-powered-smart-contact-lenses/" target="_blank">Read →</a>
     </div>
-    <div class="press-row">
+    <div class="press-row reveal">
       <div><div class="press-pub">LinkedIn</div><div class="press-country">International</div></div>
       <div class="press-headline">Revolutionizing Healthcare with Smart Contact Lenses: The Future of Proactive Health Monitoring</div>
       <a class="press-link" href="https://www.linkedin.com/pulse/revolutionizing-healthcare-smart-contact-lenses-future-lzqef" target="_blank">Read →</a>
@@ -131,7 +160,7 @@ footer{background:#000;padding:28px 56px;display:flex;align-items:center;justify
 
   <div class="sec-label">Research Highlight</div>
   <div style="height:16px;"></div>
-  <div class="highlight">
+  <div class="highlight reveal">
     <div class="hl-tag">Featured in Press · 2024</div>
     <div class="hl-h">AI-Embedded Smart Contact Lenses<br>for Continuous Health Monitoring</div>
     <p class="hl-desc">The research behind the press coverage — AI-embedded smart contact lenses that continuously monitor glucose levels, intraocular pressure, and other ocular health indicators in real time. The system uses edge AI to process readings and deliver predictive health insights, shifting healthcare from reactive to proactive.</p>
@@ -144,19 +173,19 @@ footer{background:#000;padding:28px 56px;display:flex;align-items:center;justify
   <div class="sec-label">Recognition &amp; Credentials</div>
   <div style="height:16px;"></div>
   <div class="cred-list">
-    <div class="cred-row">
+    <div class="cred-row reveal">
       <div><div class="cred-title">Research Fellowships</div><div class="cred-sub">Prestigious academic fellowships recognizing contributions to AI and data science</div></div>
       <div class="cred-tag">Fellowship</div>
     </div>
-    <div class="cred-row">
+    <div class="cred-row reveal">
       <div><div class="cred-title">Editorial Board Member</div><div class="cred-sub">International AI &amp; machine learning journals</div></div>
       <div class="cred-tag">Editorial</div>
     </div>
-    <div class="cred-row">
+    <div class="cred-row reveal">
       <div><div class="cred-title">Peer Reviewer</div><div class="cred-sub">Top-tier international publications in AI, ML, and data science</div></div>
       <div class="cred-tag">Peer Review</div>
     </div>
-    <div class="cred-row">
+    <div class="cred-row reveal">
       <div><div class="cred-title">1,000+ Citations</div><div class="cred-sub">Google Scholar</div></div>
       <div class="cred-tag">Academic</div>
     </div>
@@ -172,5 +201,35 @@ footer{background:#000;padding:28px 56px;display:flex;align-items:center;justify
     <a href="https://www.linkedin.com/in/saitejaboppiniti" target="_blank">LinkedIn</a>
   </div>
 </footer>
+<script>
+(function(){
+  var obs=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}
+    });
+  },{threshold:0.12});
+  document.querySelectorAll('.reveal,.reveal-left,.reveal-right').forEach(function(el){obs.observe(el);});
+})();
+</script>
+<script>
+(function(){
+  // Fade out before navigating to new page
+  document.querySelectorAll('a').forEach(function(link){
+    var href = link.getAttribute('href');
+    if(!href) return;
+    // Only internal page links
+    if(href.indexOf('http') === -1 && href.indexOf('#') === -1 && href !== ''){
+      link.addEventListener('click', function(e){
+        e.preventDefault();
+        document.body.style.transition = 'opacity 0.3s cubic-bezier(0.4,0,0.2,1)';
+        document.body.style.opacity = '0';
+        setTimeout(function(){
+          window.location.href = href;
+        }, 300);
+      });
+    }
+  });
+})();
+</script>
 </body>
 </html>

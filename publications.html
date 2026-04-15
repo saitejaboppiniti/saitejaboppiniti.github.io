@@ -2,6 +2,8 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"/>
+<link rel="icon" type="image/svg+xml" href="favicon.svg"/>
+
 <meta name="description" content="Publications by Sai Teja Boppiniti — 33 peer-reviewed papers spanning Healthcare AI, Data Engineering, Edge AI, and Emerging Systems. 1,000+ citations across international journals."/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 <title>Publications | Sai Teja Boppiniti</title>
@@ -99,7 +101,34 @@ footer{background:#000;padding:28px 56px;display:flex;align-items:center;justify
   footer{flex-direction:column;gap:12px;padding:24px 20px;text-align:center;}
 }
 
+
+
+/* ── PAGE TRANSITIONS ── */
+@keyframes pageFadeIn{from{opacity:0;}to{opacity:1;}}
+body{animation:pageFadeIn 0.4s cubic-bezier(0.4,0,0.2,1) both;}
+.page-leave{opacity:0;transition:opacity 0.3s cubic-bezier(0.4,0,0.2,1);}
+
+/* ── SCROLL ANIMATIONS ── */
+.reveal{opacity:0;transform:translateY(32px);transition:opacity 0.7s cubic-bezier(0.4,0,0.2,1),transform 0.7s cubic-bezier(0.4,0,0.2,1);}
+.reveal.visible{opacity:1;transform:translateY(0);}
+.reveal-left{opacity:0;transform:translateX(-32px);transition:opacity 0.7s cubic-bezier(0.4,0,0.2,1),transform 0.7s cubic-bezier(0.4,0,0.2,1);}
+.reveal-left.visible{opacity:1;transform:translateX(0);}
+.reveal-right{opacity:0;transform:translateX(32px);transition:opacity 0.7s cubic-bezier(0.4,0,0.2,1),transform 0.7s cubic-bezier(0.4,0,0.2,1);}
+.reveal-right.visible{opacity:1;transform:translateX(0);}
+.delay-1{transition-delay:0.1s;}.delay-2{transition-delay:0.2s;}.delay-3{transition-delay:0.3s;}.delay-4{transition-delay:0.4s;}.delay-5{transition-delay:0.5s;}
+
 </style>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://saitejaboppiniti.com/publications.html"/>
+<meta property="og:title" content="Publications — Sai Teja Boppiniti"/>
+<meta property="og:description" content="33 peer-reviewed papers spanning Healthcare AI, Data Engineering, Edge AI and Emerging Systems. 1,000+ citations across international journals."/>
+<meta property="og:image" content="https://saitejaboppiniti.com/profile.jpg"/>
+<meta property="og:image:width" content="800"/>
+<meta property="og:image:height" content="800"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Publications — Sai Teja Boppiniti"/>
+<meta name="twitter:description" content="33 peer-reviewed papers spanning Healthcare AI, Data Engineering, Edge AI and Emerging Systems. 1,000+ citations across international journals."/>
+<meta name="twitter:image" content="https://saitejaboppiniti.com/profile.jpg"/>
 </head>
 <body>
 
@@ -128,7 +157,7 @@ footer{background:#000;padding:28px 56px;display:flex;align-items:center;justify
 <div class="body">
 
   <!-- FILTER TABS -->
-  <div class="filter-bar">
+  <div class="filter-bar reveal">
     <button class="filter-btn active" onclick="filterGroup('all',this)">All Papers</button>
     <button class="filter-btn" onclick="filterGroup('healthcare',this)">Healthcare AI</button>
     <button class="filter-btn" onclick="filterGroup('data',this)">Data Engineering &amp; Analytics</button>
@@ -137,7 +166,7 @@ footer{background:#000;padding:28px 56px;display:flex;align-items:center;justify
 
   <!-- GROUP 1: HEALTHCARE AI -->
   <div class="group" data-group="healthcare">
-    <div class="group-header" onclick="toggleGroup(this)">
+    <div class="group-header reveal" onclick="toggleGroup(this)">
       <span class="group-title">Healthcare AI</span>
       <span class="group-count">12 papers</span>
       <span class="group-chevron open">▾</span>
@@ -269,7 +298,7 @@ footer{background:#000;padding:28px 56px;display:flex;align-items:center;justify
 
   <!-- GROUP 2: DATA ENGINEERING & ANALYTICS -->
   <div class="group" data-group="data">
-    <div class="group-header" onclick="toggleGroup(this)">
+    <div class="group-header reveal" onclick="toggleGroup(this)">
       <span class="group-title">Data Engineering &amp; Analytics</span>
       <span class="group-count">11 papers</span>
       <span class="group-chevron open">▾</span>
@@ -391,7 +420,7 @@ footer{background:#000;padding:28px 56px;display:flex;align-items:center;justify
 
   <!-- GROUP 3: EDGE AI & EMERGING SYSTEMS -->
   <div class="group" data-group="edge">
-    <div class="group-header" onclick="toggleGroup(this)">
+    <div class="group-header reveal" onclick="toggleGroup(this)">
       <span class="group-title">Edge AI &amp; Emerging Systems</span>
       <span class="group-count">10 papers</span>
       <span class="group-chevron open">▾</span>
@@ -501,7 +530,7 @@ footer{background:#000;padding:28px 56px;display:flex;align-items:center;justify
     </div>
   </div>
 
-  <div class="scholar-cta">
+  <div class="scholar-cta reveal">
     <div>
       <div class="sc-label">Full publication list with citation metrics</div>
       <div class="sc-title">View complete profile on Google Scholar</div>
@@ -598,5 +627,35 @@ function filterGroup(topic, btn) {
 }
 </script>
 
+<script>
+(function(){
+  var obs=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}
+    });
+  },{threshold:0.12});
+  document.querySelectorAll('.reveal,.reveal-left,.reveal-right').forEach(function(el){obs.observe(el);});
+})();
+</script>
+<script>
+(function(){
+  // Fade out before navigating to new page
+  document.querySelectorAll('a').forEach(function(link){
+    var href = link.getAttribute('href');
+    if(!href) return;
+    // Only internal page links
+    if(href.indexOf('http') === -1 && href.indexOf('#') === -1 && href !== ''){
+      link.addEventListener('click', function(e){
+        e.preventDefault();
+        document.body.style.transition = 'opacity 0.3s cubic-bezier(0.4,0,0.2,1)';
+        document.body.style.opacity = '0';
+        setTimeout(function(){
+          window.location.href = href;
+        }, 300);
+      });
+    }
+  });
+})();
+</script>
 </body>
 </html>
