@@ -30,9 +30,9 @@ nav{background:#000;height:68px;display:flex;align-items:center;justify-content:
 .hero-photo-wrap img{width:100%;height:100%;object-fit:cover;object-position:top center;display:block;}
 /* fade edges into black */
 .hero-photo-wrap::after{content:'';position:absolute;inset:0;background:
-  linear-gradient(to right, transparent 65%, #000 100%),
-  linear-gradient(to top, #000 0%, transparent 20%),
-  linear-gradient(to bottom, #000 0%, transparent 10%);
+  linear-gradient(to right, #000 0%, transparent 25%, transparent 60%, #000 100%),
+  linear-gradient(to top, #000 0%, transparent 25%),
+  linear-gradient(to bottom, #000 0%, transparent 12%);
 pointer-events:none;}
 
 /* Text column — sits right next to the photo */
@@ -130,6 +130,14 @@ body{animation:pageFadeIn 0.4s cubic-bezier(0.4,0,0.2,1) both;}
 <meta name="twitter:title" content="Sai Teja Boppiniti — Senior Data Engineer | Researcher"/>
 <meta name="twitter:description" content="Senior Data Engineer at The Kroger Co. and independent AI/ML Researcher. Engineering large-scale data systems and advancing research in healthcare AI and real-time machine learning. Featured in Times of India, Deccan Chronicle, and BD Tech Talks."/>
 <meta name="twitter:image" content="https://saitejaboppiniti.com/profile.jpg"/>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LVV5PNH3L6"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-LVV5PNH3L6');
+</script>
 </head>
 <body>
 
