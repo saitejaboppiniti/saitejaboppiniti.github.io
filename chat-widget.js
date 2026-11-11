@@ -3,6 +3,8 @@
 
   const LINKEDIN_URL = "https://www.linkedin.com/in/saitejaboppiniti";
   const MAX_MESSAGE_LENGTH = 1200;
+  const STORAGE_KEY = "portfolio-chat-conversation";
+  const MAX_SAVED_TURNS = 40;
   const script = document.currentScript;
   const configuredEndpoint = script?.dataset.endpoint?.trim() || "";
   const isLocalPreview = ["localhost", "127.0.0.1"].includes(window.location.hostname);
@@ -128,52 +130,50 @@
     return message;
   }
 
-  // Shows the web pages Google Search used and Google's required Search
-  // Suggestions, exactly as Google provides them. They sit in a closed shadow
-  // root so the site's own styles and analytics click tracking can't reach them.
-  function addSearchResults(webSources, suggestionsHtml) {
-    const links = (Array.isArray(webSources) ? webSources : [])
-      .filter((source) => typeof source?.url === "string" && source.url.startsWith("https://"))
-      .slice(0, 5);
-    const html = typeof suggestionsHtml === "string" ? suggestionsHtml : "";
-    if (links.length === 0 && !html) return;
+  // The chat shows plain text, so turn any Markdown the model adds into
+  // readable text: "* item" becomes "• item", and **bold** / # headings lose their symbols.
+  function cleanAnswer(text) {
+    return text
+      .replace(/\*\*(.+?)\*\*/g, "$1")
+      .replace(/__(.+?)__/g, "$1")
+      .replace(/^[ \t]*[*\-+][ \t]+/gm, "• ")
+      .replace(/^[ \t]*#{1,6}[ \t]+/gm, "")
+      .replace(/\n{3,}/g, "\n\n")
+      .trim();
+  }
 
-    const host = document.createElement("div");
-    host.className = "chat-search-results";
-    const shadow = host.attachShadow({ mode: "closed" });
-    const style = document.createElement("style");
-    style.textContent = `
-      :host { display: block; align-self: flex-start; max-width: 92%; margin: -5px 0 2px 4px; }
-      .label { color: #666; font: 700 10px/1.6 Montserrat, sans-serif; letter-spacing: .08em; text-transform: uppercase; }
-      a.web { display: block; color: #222; font: 600 11px/1.55 Montserrat, sans-serif; text-decoration: underline; text-underline-offset: 2px; }
-      .suggestions { margin-top: 6px; }
-    `;
-    shadow.appendChild(style);
+  // Keeps the conversation while the visitor moves between pages in the same
+  // browser tab. sessionStorage is cleared when the tab closes. If storage is
+  // blocked (private mode, strict settings), the chat still works without it.
+  function saveConversation() {
+    try {
+      if (conversation.length > 0) sessionStorage.setItem(STORAGE_KEY, JSON.stringify(conversation));
+      else sessionStorage.removeItem(STORAGE_KEY);
+    } catch {
+      // Storage unavailable: the conversation simply won't carry over.
+    }
+  }
 
-    if (links.length > 0) {
-      const label = document.createElement("div");
-      label.className = "label";
-      label.textContent = "From the web";
-      shadow.appendChild(label);
-      links.forEach((source) => {
-        const link = document.createElement("a");
-        link.className = "web";
-        link.href = source.url;
-        link.target = "_blank";
-        link.rel = "noopener noreferrer";
-        link.textContent = source.label || "Web result";
-        shadow.appendChild(link);
+  function restoreConversation() {
+    let saved;
+    try {
+      saved = JSON.parse(sessionStorage.getItem(STORAGE_KEY) || "[]");
+    } catch {
+      return;
+    }
+    if (!Array.isArray(saved)) return;
+    saved
+      .filter((turn) => (turn?.role === "user" || turn?.role === "assistant") && typeof turn.text === "string" && turn.text.trim())
+      .slice(-MAX_SAVED_TURNS)
+      .forEach((turn) => {
+        const sources = Array.isArray(turn.sources) ? turn.sources : [];
+        conversation.push(turn.role === "assistant" ? { role: turn.role, text: turn.text, sources } : { role: turn.role, text: turn.text });
+        addMessage(turn.role, turn.text, sources);
       });
+    if (conversation.length > 0) {
+      suggestions.hidden = true;
+      launcherLabel.textContent = "Continue chat";
     }
-    if (html) {
-      const suggestionsBox = document.createElement("div");
-      suggestionsBox.className = "suggestions";
-      suggestionsBox.innerHTML = html;
-      shadow.appendChild(suggestionsBox);
-    }
-
-    messagesElement.appendChild(host);
-    content.scrollTop = content.scrollHeight;
   }
 
   function updateSendButton() {
@@ -183,6 +183,7 @@
   function resetConversation() {
     messagesElement.replaceChildren();
     conversation = [];
+    saveConversation();
     suggestions.hidden = false;
     status.textContent = "";
     input.value = "";
@@ -207,7 +208,8 @@
     status.textContent = "";
     suggestions.hidden = true;
     const userMessage = addMessage("user", question);
-    const history = conversation.slice(-8);
+    // Only role and text go to the server; saved source links stay in the browser.
+    const history = conversation.slice(-8).map(({ role, text: turnText }) => ({ role, text: turnText }));
     conversation.push({ role: "user", text: question });
     input.value = "";
     input.style.height = "";
@@ -242,10 +244,11 @@
         throw new Error("No answer was returned. Please try again.");
       }
 
-      const answer = payload.answer.trim();
-      conversation.push({ role: "assistant", text: answer });
-      addMessage("assistant", answer, Array.isArray(payload.sources) ? payload.sources : []);
-      addSearchResults(payload.webSources, payload.searchSuggestionsHtml);
+      const answer = cleanAnswer(payload.answer);
+      const sources = Array.isArray(payload.sources) ? payload.sources : [];
+      conversation.push({ role: "assistant", text: answer, sources });
+      addMessage("assistant", answer, sources);
+      saveConversation();
     } catch (error) {
       status.textContent = error instanceof TypeError
         ? "Couldn’t connect to the chat service. Your question is still here—please try again."
@@ -272,6 +275,8 @@
       input.focus();
     }
   }
+
+  restoreConversation();
 
   launcher.addEventListener("click", () => setOpen(true));
   // Minimize keeps the conversation; close ends it so the next chat starts fresh.

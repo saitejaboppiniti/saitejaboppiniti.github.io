@@ -413,6 +413,20 @@
   text-underline-offset: 2px;
 }
 
+/* Keep the fixed chatbot icon from covering the footer links
+   (Google Scholar, LinkedIn) at the bottom of every page. */
+@media (min-width: 769px) {
+  body > footer {
+    padding-right: 160px;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  body > footer {
+    padding-bottom: 110px;
+  }
+}
+
 @media (max-width: 480px) {
   /* On phones the icon is smaller and the speech bubble is hidden so it
      doesn't cover page buttons. */
