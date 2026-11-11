@@ -4,29 +4,31 @@
 <meta charset="UTF-8"/>
 <link rel="icon" type="image/svg+xml" href="favicon.svg"/>
 
-<meta name="description" content="Publications by Sai Teja Boppiniti — 33 peer-reviewed papers spanning Healthcare AI, Data Engineering, Edge AI, and Emerging Systems. 1,000+ citations across international journals."/>
+<meta name="description" content="Research publications by Sai Teja Boppiniti spanning Healthcare AI, Data Engineering, Edge AI, and Emerging Systems. Citation metrics are available on Google Scholar."/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 <title>Publications | Sai Teja Boppiniti</title>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="chat-widget.css"/>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 body{font-family:'Montserrat',sans-serif;background:#fff;color:#111;-webkit-font-smoothing:antialiased;font-size:14px;line-height:1.7;}
 a{text-decoration:none;color:inherit;}
-
+button,a{ -webkit-tap-highlight-color:transparent;}
+a:focus-visible,button:focus-visible,[role="button"]:focus-visible{outline:2px solid #4778d8;outline-offset:3px;}
 nav{background:#000;height:68px;display:flex;align-items:center;justify-content:space-between;padding:0 56px;position:sticky;top:0;z-index:100;}
-.nav-logo{font-size:15px;font-weight:800;color:#fff;}
+.nav-logo{font-size:15px;font-weight:800;color:#fff;white-space:nowrap;}
 .nav-links{display:flex;gap:36px;list-style:none;align-items:center;}
-.nav-links a{font-size:10px;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:rgba(255,255,255,0.45);transition:color 0.2s;}
+.nav-links a{font-size:10px;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:rgba(255,255,255,0.75);transition:color 0.2s;}
 .nav-links a:hover,.nav-active{color:#fff!important;}
 .nav-active{border-bottom:1px solid #fff;padding-bottom:3px;}
 
 /* HERO */
 .hero{background:#000;padding:56px 56px 40px;}
 .hero-inner{max-width:900px;margin:0 auto;display:flex;align-items:flex-end;justify-content:space-between;padding-bottom:28px;border-bottom:1px solid rgba(255,255,255,0.07);}
-.hero-tag{font-size:9px;font-weight:700;letter-spacing:0.28em;text-transform:uppercase;color:rgba(255,255,255,0.3);margin-bottom:12px;}
+.hero-tag{font-size:9px;font-weight:700;letter-spacing:0.28em;text-transform:uppercase;color:rgba(255,255,255,0.72);margin-bottom:12px;}
 .hero-h1{font-size:40px;font-weight:900;color:#fff;letter-spacing:-0.02em;line-height:1.05;margin-bottom:8px;}
-.hero-sub{font-size:12px;font-weight:300;color:rgba(255,255,255,0.35);max-width:440px;line-height:1.8;}
-.scholar-btn{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);padding:10px 18px;border-radius:2px;font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.6);transition:all 0.2s;white-space:nowrap;align-self:flex-end;}
+.hero-sub{font-size:12px;font-weight:300;color:rgba(255,255,255,0.72);max-width:440px;line-height:1.8;}
+.scholar-btn{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.28);padding:10px 18px;border-radius:2px;font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.82);transition:all 0.2s;white-space:nowrap;align-self:flex-end;}
 .scholar-btn:hover{background:rgba(255,255,255,0.13);color:#fff;border-color:rgba(255,255,255,0.25);}
 
 
@@ -43,38 +45,38 @@ nav{background:#000;height:68px;display:flex;align-items:center;justify-content:
 /* PAPER GROUPS */
 .group{margin-bottom:0;}
 .group[data-hidden="true"]{display:none;}
-.group-header{display:flex;align-items:center;gap:14px;margin-bottom:0;cursor:pointer;user-select:none;padding:18px 0;border-bottom:2px solid #000;}
-.group-header:first-of-type{}
+.group-heading{margin:0;}
+.group-header{display:flex;align-items:center;gap:14px;width:100%;margin-bottom:0;padding:18px 0;border:0;border-bottom:2px solid #000;background:#fff;color:inherit;text-align:left;font:inherit;cursor:pointer;}
 .group-title{font-size:11px;font-weight:800;letter-spacing:0.18em;text-transform:uppercase;color:#000;}
-.group-count{font-size:10px;font-weight:500;color:#bbb;letter-spacing:0.06em;margin-left:auto;}
-.group-chevron{font-size:14px;color:#bbb;transition:transform 0.22s;flex-shrink:0;}
+.group-count{font-size:10px;font-weight:500;color:#666;letter-spacing:0.06em;margin-left:auto;}
+.group-chevron{font-size:14px;color:#666;transition:transform 0.22s;flex-shrink:0;}
 .group-chevron.open{transform:rotate(180deg);}
 
 /* PAPER LIST */
-.paper-list{overflow:hidden;transition:max-height 0.35s cubic-bezier(0.4,0,0.2,1);}
-.paper-list.collapsed{max-height:0;}
+.paper-list[hidden]{display:none;}
 
-.paper{display:grid;grid-template-columns:36px 1fr 52px;gap:16px;align-items:center;padding:16px 0;border-bottom:1px solid #f0f0f0;cursor:pointer;}
+.paper{display:grid;grid-template-columns:36px minmax(0,1fr) 52px;gap:16px;align-items:center;padding:16px 0;border-bottom:1px solid #f0f0f0;cursor:pointer;}
 .paper:hover{background:#fafafa;margin:0 -12px;padding:16px 12px;}
-.paper-num{font-size:11px;font-weight:600;color:#ddd;letter-spacing:0.04em;}
+.paper-num{font-size:11px;font-weight:600;color:#666;letter-spacing:0.04em;}
 .paper-body{}
 .paper-title{font-size:13px;font-weight:600;color:#000;line-height:1.5;margin-bottom:3px;transition:color 0.15s;}
 .paper:hover .paper-title{color:#555;}
-.paper-journal{font-size:10px;font-weight:400;color:#aaa;font-style:italic;line-height:1.4;}
-.paper-arrow{font-size:13px;color:#ccc;text-align:right;transition:color 0.15s,transform 0.15s;}
+.paper-journal{font-size:10px;font-weight:400;color:#666;font-style:italic;line-height:1.4;}
+.paper-arrow{font-size:13px;color:#777;text-align:right;transition:color 0.15s,transform 0.15s;}
 .paper:hover .paper-arrow{color:#000;transform:translateX(2px);}
 
 /* EXPANDED DETAIL */
-.paper-detail{max-height:0;overflow:hidden;transition:max-height 0.28s cubic-bezier(0.4,0,0.2,1);}
-.paper-detail.open{max-height:160px;}
+.paper-detail{max-height:none;overflow:visible;}
+.js-enabled .paper-detail{max-height:0;overflow:hidden;transition:max-height 0.28s cubic-bezier(0.4,0,0.2,1);}
+.js-enabled .paper-detail.open{max-height:160px;}
 .detail-inner{padding:12px 52px 16px;background:#f9f9f9;border-bottom:1px solid #ebebeb;display:flex;align-items:center;justify-content:space-between;gap:20px;}
-.detail-year{font-size:10px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#999;}
+.detail-year{font-size:10px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#666;}
 .detail-link{display:inline-block;font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#fff;background:#000;padding:8px 18px;border-radius:2px;transition:opacity 0.15s;white-space:nowrap;}
 .detail-link:hover{opacity:0.7;}
 
 /* SCHOLAR CTA */
 .scholar-cta{border:1px solid #000;padding:28px 32px;display:flex;align-items:center;justify-content:space-between;margin-top:48px;border-radius:2px;}
-.sc-label{font-size:9px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:#aaa;margin-bottom:5px;}
+.sc-label{font-size:9px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:#666;margin-bottom:5px;}
 .sc-title{font-size:15px;font-weight:700;color:#000;}
 .sc-link{display:inline-block;background:#000;color:#fff;padding:11px 22px;border-radius:2px;font-size:10px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;transition:opacity 0.15s;white-space:nowrap;}
 .sc-link:hover{opacity:0.7;}
@@ -85,11 +87,13 @@ footer{background:#000;padding:28px 56px;display:flex;align-items:center;justify
 .foot-links{display:flex;gap:20px;}
 .foot-links a{font-size:10px;color:#555;transition:color 0.2s;}
 .foot-links a:hover{color:#fff;}
+.foot-copy{color:#aaa;}
+.foot-links a{color:#aaa;}
 
 /* ── MOBILE RESPONSIVE ── */
 @media (max-width: 768px) {
   nav{padding:0 20px;}
-  .nav-links{gap:16px;}
+  .nav-links{gap:16px;min-width:0;}
   .nav-links a{font-size:9px;}
   .hero{padding:40px 20px 28px;}
   .hero-inner{flex-direction:column;gap:20px;align-items:flex-start;}
@@ -101,33 +105,42 @@ footer{background:#000;padding:28px 56px;display:flex;align-items:center;justify
   footer{flex-direction:column;gap:12px;padding:24px 20px;text-align:center;}
 }
 
+@media (max-width: 480px) {
+  nav{height:auto;min-height:68px;align-items:flex-start;flex-direction:column;gap:8px;padding:12px 16px;}
+  .nav-links{width:100%;justify-content:space-between;gap:8px;}
+  .nav-links a{font-size:10px;letter-spacing:0.02em;}
+  .hero-h1{font-size:clamp(34px,11vw,40px);}
+  .paper{grid-template-columns:24px minmax(0,1fr) 24px;gap:10px;}
+  .detail-inner{padding:12px 16px 16px;}
+}
+
 
 
 /* ── PAGE TRANSITIONS ── */
-@keyframes pageFadeIn{from{opacity:0;}to{opacity:1;}}
-body{animation:pageFadeIn 0.4s cubic-bezier(0.4,0,0.2,1) both;}
-.page-leave{opacity:0;transition:opacity 0.3s cubic-bezier(0.4,0,0.2,1);}
 
 /* ── SCROLL ANIMATIONS ── */
-.reveal{opacity:0;transform:translateY(32px);transition:opacity 0.7s cubic-bezier(0.4,0,0.2,1),transform 0.7s cubic-bezier(0.4,0,0.2,1);}
-.reveal.visible{opacity:1;transform:translateY(0);}
-.reveal-left{opacity:0;transform:translateX(-32px);transition:opacity 0.7s cubic-bezier(0.4,0,0.2,1),transform 0.7s cubic-bezier(0.4,0,0.2,1);}
-.reveal-left.visible{opacity:1;transform:translateX(0);}
-.reveal-right{opacity:0;transform:translateX(32px);transition:opacity 0.7s cubic-bezier(0.4,0,0.2,1),transform 0.7s cubic-bezier(0.4,0,0.2,1);}
-.reveal-right.visible{opacity:1;transform:translateX(0);}
+.reveal,.reveal-left,.reveal-right{opacity:1;transform:none;transition:opacity 0.7s cubic-bezier(0.4,0,0.2,1),transform 0.7s cubic-bezier(0.4,0,0.2,1);}
+.js-enabled .reveal,.js-enabled .reveal-left,.js-enabled .reveal-right{opacity:0;transform:translateY(32px);}
+.js-enabled .reveal.visible,.js-enabled .reveal-left.visible,.js-enabled .reveal-right.visible{opacity:1;transform:translateY(0);}
 .delay-1{transition-delay:0.1s;}.delay-2{transition-delay:0.2s;}.delay-3{transition-delay:0.3s;}.delay-4{transition-delay:0.4s;}.delay-5{transition-delay:0.5s;}
+
+@media (prefers-reduced-motion: reduce) {
+  *,*::before,*::after{scroll-behavior:auto!important;animation:none!important;transition-duration:0.01ms!important;transition-delay:0ms!important;}
+  .reveal,.reveal-left,.reveal-right,.js-enabled .reveal,.js-enabled .reveal-left,.js-enabled .reveal-right{opacity:1;transform:none;}
+}
 
 </style>
 <meta property="og:type" content="website"/>
 <meta property="og:url" content="https://saitejaboppiniti.com/publications.html"/>
 <meta property="og:title" content="Publications — Sai Teja Boppiniti"/>
-<meta property="og:description" content="33 peer-reviewed papers spanning Healthcare AI, Data Engineering, Edge AI and Emerging Systems. 1,000+ citations across international journals."/>
+<meta property="og:description" content="Research publications spanning Healthcare AI, Data Engineering, Edge AI and Emerging Systems. Citation metrics are available on Google Scholar."/>
 <meta property="og:image" content="https://saitejaboppiniti.com/profile.jpg"/>
-<meta property="og:image:width" content="800"/>
-<meta property="og:image:height" content="800"/>
+<meta property="og:image:width" content="798"/>
+<meta property="og:image:height" content="997"/>
+<link rel="canonical" href="https://saitejaboppiniti.com/publications.html"/>
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:title" content="Publications — Sai Teja Boppiniti"/>
-<meta name="twitter:description" content="33 peer-reviewed papers spanning Healthcare AI, Data Engineering, Edge AI and Emerging Systems. 1,000+ citations across international journals."/>
+<meta name="twitter:description" content="Research publications spanning Healthcare AI, Data Engineering, Edge AI and Emerging Systems. Citation metrics are available on Google Scholar."/>
 <meta name="twitter:image" content="https://saitejaboppiniti.com/profile.jpg"/>
 <!-- Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-LVV5PNH3L6"></script>
@@ -140,24 +153,25 @@ body{animation:pageFadeIn 0.4s cubic-bezier(0.4,0,0.2,1) both;}
 </head>
 <body>
 
-<nav>
-  <div class="nav-logo">Sai Teja Boppiniti</div>
+<nav aria-label="Primary">
+  <a class="nav-logo" href="index.html">Sai Teja Boppiniti</a>
   <ul class="nav-links">
     <li><a href="index.html">Home</a></li>
     <li><a href="about.html">About</a></li>
-    <li><a href="publications.html" class="nav-active">Publications</a></li>
+    <li><a href="publications.html" class="nav-active" aria-current="page">Publications</a></li>
     <li><a href="media.html">Media</a></li>
   </ul>
 </nav>
 
+<main>
 <div class="hero">
   <div class="hero-inner">
     <div>
       <div class="hero-tag">Research Portfolio</div>
-      <div class="hero-h1">Publications</div>
+      <h1 class="hero-h1">Publications</h1>
       
     </div>
-    <a class="scholar-btn" href="https://scholar.google.com/citations?user=H3XJtbcAAAAJ&hl=en" target="_blank">Google Scholar →</a>
+    <a class="scholar-btn" href="https://scholar.google.com/citations?user=H3XJtbcAAAAJ&hl=en" target="_blank" rel="noopener noreferrer">Google Scholar →</a>
   </div>
 </div>
 
@@ -166,20 +180,20 @@ body{animation:pageFadeIn 0.4s cubic-bezier(0.4,0,0.2,1) both;}
 
   <!-- FILTER TABS -->
   <div class="filter-bar reveal">
-    <button class="filter-btn active" onclick="filterGroup('all',this)">All Papers</button>
-    <button class="filter-btn" onclick="filterGroup('healthcare',this)">Healthcare AI</button>
-    <button class="filter-btn" onclick="filterGroup('data',this)">Data Engineering &amp; Analytics</button>
-    <button class="filter-btn" onclick="filterGroup('edge',this)">Edge AI &amp; Emerging Systems</button>
+    <button type="button" class="filter-btn active" aria-pressed="true" onclick="filterGroup('all',this)">All Papers</button>
+    <button type="button" class="filter-btn" aria-pressed="false" onclick="filterGroup('healthcare',this)">Healthcare AI</button>
+    <button type="button" class="filter-btn" aria-pressed="false" onclick="filterGroup('data',this)">Data Engineering &amp; Analytics</button>
+    <button type="button" class="filter-btn" aria-pressed="false" onclick="filterGroup('edge',this)">Edge AI &amp; Emerging Systems</button>
   </div>
 
   <!-- GROUP 1: HEALTHCARE AI -->
   <div class="group" data-group="healthcare">
-    <div class="group-header reveal" onclick="toggleGroup(this)">
+  <h2 class="group-heading"><button type="button" class="group-header reveal" aria-expanded="true" aria-controls="paper-group-healthcare" onclick="toggleGroup(this)">
       <span class="group-title">Healthcare AI</span>
       <span class="group-count">12 papers</span>
-      <span class="group-chevron open">▾</span>
-    </div>
-    <div class="paper-list">
+      <span class="group-chevron open" aria-hidden="true">▾</span>
+    </button></h2>
+    <div class="paper-list" id="paper-group-healthcare">
 
       <div class="paper" onclick="toggleDetail(this)">
         <div class="paper-num">01</div>
@@ -189,7 +203,7 @@ body{animation:pageFadeIn 0.4s cubic-bezier(0.4,0,0.2,1) both;}
         </div>
         <div class="paper-arrow">→</div>
       </div>
-      <div class="paper-detail"><div class="detail-inner"><span class="detail-year">2024</span><a class="detail-link" href="https://repo.ijiert.org/index.php/ijiert/article/view/3924" target="_blank">View Paper →</a></div></div>
+      <div class="paper-detail"><div class="detail-inner"><span class="detail-year">2024</span><a class="detail-link" href="https://repo.ijiert.org/index.php/ijiert/article/view/3924" target="_blank" rel="noopener noreferrer">View Paper →</a></div></div>
 
       <div class="paper" onclick="toggleDetail(this)">
         <div class="paper-num">02</div>
@@ -199,7 +213,7 @@ body{animation:pageFadeIn 0.4s cubic-bezier(0.4,0,0.2,1) both;}
         </div>
         <div class="paper-arrow">→</div>
       </div>
-      <div class="paper-detail"><div class="detail-inner"><span class="detail-year">2025</span><a class="detail-link" href="https://www.researchgate.net/publication/384280814" target="_blank">View Paper →</a></div></div>
+      <div class="paper-detail"><div class="detail-inner"><span class="detail-year">2025</span><a class="detail-link" href="https://www.researchgate.net/publication/384280814" target="_blank" rel="noopener noreferrer">View Paper →</a></div></div>
 
       <div class="paper" onclick="toggleDetail(this)">
         <div class="paper-num">03</div>
@@ -209,7 +223,7 @@ body{animation:pageFadeIn 0.4s cubic-bezier(0.4,0,0.2,1) both;}
         </div>
         <div class="paper-arrow">→</div>
       </div>
-      <div class="paper-detail"><div class="detail-inner"><span class="detail-year">2022</span><a class="detail-link" href="https://scholar.google.com/citations?user=H3XJtbcAAAAJ&hl=en" target="_blank">View Paper →</a></div></div>
+      <div class="paper-detail"><div class="detail-inner"><span class="detail-year">2022</span><a class="detail-link" href="https://scholar.google.com/citations?user=H3XJtbcAAAAJ&hl=en" target="_blank" rel="noopener noreferrer">Open Google Scholar →</a></div></div>
 
       <div class="paper" onclick="toggleDetail(this)">
         <div class="paper-num">04</div>
@@ -219,7 +233,7 @@ body{animation:pageFadeIn 0.4s cubic-bezier(0.4,0,0.2,1) both;}
         </div>
         <div class="paper-arrow">→</div>
       </div>
-      <div class="paper-detail"><div class="detail-inner"><span class="detail-year">2023</span><a class="detail-link" href="https://isjr.co.in/index.php/ITML/article/view/294" target="_blank">View Paper →</a></div></div>
+      <div class="paper-detail"><div class="detail-inner"><span class="detail-year">2023</span><a class="detail-link" href="https://isjr.co.in/index.php/ITML/article/view/294" target="_blank" rel="noopener noreferrer">View Paper →</a></div></div>
 
       <div class="paper" onclick="toggleDetail(this)">
         <div class="paper-num">05</div>
@@ -229,7 +243,7 @@ body{animation:pageFadeIn 0.4s cubic-bezier(0.4,0,0.2,1) both;}
         </div>
         <div class="paper-arrow">→</div>
       </div>
-      <div class="paper-detail"><div class="detail-inner"><span class="detail-year">2023</span><a class="detail-link" href="https://scholar.google.com/citations?user=H3XJtbcAAAAJ&hl=en" target="_blank">View Paper →</a></div></div>
+      <div class="paper-detail"><div class="detail-inner"><span class="detail-year">2023</span><a class="detail-link" href="https://scholar.google.com/citations?user=H3XJtbcAAAAJ&hl=en" target="_blank" rel="noopener noreferrer">Open Google Scholar →</a></div></div>
 
       <div class="paper" onclick="toggleDetail(this)">
         <div class="paper-num">06</div>
@@ -239,7 +253,7 @@ body{animation:pageFadeIn 0.4s cubic-bezier(0.4,0,0.2,1) both;}
         </div>
         <div class="paper-arrow">→</div>
       </div>
-      <div class="paper-detail"><div class="detail-inner"><span class="detail-year">2019</span><a class="detail-link" href="https://www.researchgate.net/publication/387377679" target="_blank">View Paper →</a></div></div>
+      <div class="paper-detail"><div class="detail-inner"><span class="detail-year">2019</span><a class="detail-link" href="https://www.researchgate.net/publication/387377679" target="_blank" rel="noopener noreferrer">View Paper →</a></div></div>
 
       <div class="paper" onclick="toggleDetail(this)">
         <div class="paper-num">07</div>
@@ -249,7 +263,7 @@ body{animation:pageFadeIn 0.4s cubic-bezier(0.4,0,0.2,1) both;}
         </div>
         <div class="paper-arrow">→</div>
       </div>
-      <div class="paper-detail"><div class="detail-inner"><span class="detail-year">2020</span><a class="detail-link" href="https://scholar.google.com/citations?user=H3XJtbcAAAAJ&hl=en" target="_blank">View Paper →</a></div></div>
+      <div class="paper-detail"><div class="detail-inner"><span class="detail-year">2020</span><a class="detail-link" href="https://scholar.google.com/citations?user=H3XJtbcAAAAJ&hl=en" target="_blank" rel="noopener noreferrer">Open Google Scholar →</a></div></div>
 
       <div class="paper" onclick="toggleDetail(this)">
         <div class="paper-num">08</div>
@@ -259,7 +273,7 @@ body{animation:pageFadeIn 0.4s cubic-bezier(0.4,0,0.2,1) both;}
         </div>
         <div class="paper-arrow">→</div>
       </div>
-      <div class="paper-detail"><div class="detail-inner"><span class="detail-year">2019</span><a class="detail-link" href="https://injmr.com/index.php/fewfewf/article/view/154" target="_blank">View Paper →</a></div></div>
+      <div class="paper-detail"><div class="detail-inner"><span class="detail-year">2019</span><a class="detail-link" href="https://injmr.com/index.php/fewfewf/article/view/154" target="_blank" rel="noopener noreferrer">View Paper →</a></div></div>
 
       <div class="paper" onclick="toggleDetail(this)">
         <div class="paper-num">09</div>
@@ -269,7 +283,7 @@ body{animation:pageFadeIn 0.4s cubic-bezier(0.4,0,0.2,1) both;}
         </div>
         <div class="paper-arrow">→</div>
       </div>
-      <div class="paper-detail"><div class="detail-inner"><span class="detail-year">2018</span><a class="detail-link" href="https://scholar.google.com/citations?user=H3XJtbcAAAAJ&hl=en" target="_blank">View Paper →</a></div></div>
+      <div class="paper-detail"><div class="detail-inner"><span class="detail-year">2018</span><a class="detail-link" href="https://scholar.google.com/citations?user=H3XJtbcAAAAJ&hl=en" target="_blank" rel="noopener noreferrer">Open Google Scholar →</a></div></div>
 
       <div class="paper" onclick="toggleDetail(this)">
         <div class="paper-num">10</div>
@@ -279,7 +293,7 @@ body{animation:pageFadeIn 0.4s cubic-bezier(0.4,0,0.2,1) both;}
         </div>
         <div class="paper-arrow">→</div>
       </div>
-      <div class="paper-detail"><div class="detail-inner"><span class="detail-year">2018</span><a class="detail-link" href="https://injmr.com/index.php/fewfewf/article/view/153" target="_blank">View Paper →</a></div></div>
+      <div class="paper-detail"><div class="detail-inner"><span class="detail-year">2018</span><a class="detail-link" href="https://injmr.com/index.php/fewfewf/article/view/153" target="_blank" rel="noopener noreferrer">View Paper →</a></div></div>
 
       <div class="paper" onclick="toggleDetail(this)">
         <div class="paper-num">11</div>
@@ -289,7 +303,7 @@ body{animation:pageFadeIn 0.4s cubic-bezier(0.4,0,0.2,1) both;}
         </div>
         <div class="paper-arrow">→</div>
       </div>
-      <div class="paper-detail"><div class="detail-inner"><span class="detail-year">2018</span><a class="detail-link" href="https://scholar.google.com/citations?user=H3XJtbcAAAAJ&hl=en" target="_blank">View Paper →</a></div></div>
+      <div class="paper-detail"><div class="detail-inner"><span class="detail-year">2018</span><a class="detail-link" href="https://scholar.google.com/citations?user=H3XJtbcAAAAJ&hl=en" target="_blank" rel="noopener noreferrer">Open Google Scholar →</a></div></div>
 
       <div class="paper" onclick="toggleDetail(this)">
         <div class="paper-num">12</div>
@@ -299,19 +313,19 @@ body{animation:pageFadeIn 0.4s cubic-bezier(0.4,0,0.2,1) both;}
         </div>
         <div class="paper-arrow">→</div>
       </div>
-      <div class="paper-detail"><div class="detail-inner"><span class="detail-year">2017</span><a class="detail-link" href="https://injmr.com/index.php/fewfewf/article/view/152" target="_blank">View Paper →</a></div></div>
+      <div class="paper-detail"><div class="detail-inner"><span class="detail-year">2017</span><a class="detail-link" href="https://injmr.com/index.php/fewfewf/article/view/152" target="_blank" rel="noopener noreferrer">View Paper →</a></div></div>
 
     </div>
   </div>
 
   <!-- GROUP 2: DATA ENGINEERING & ANALYTICS -->
   <div class="group" data-group="data">
-    <div class="group-header reveal" onclick="toggleGroup(this)">
+    <h2 class="group-heading"><button type="button" class="group-header reveal" aria-expanded="true" aria-controls="paper-group-data" onclick="toggleGroup(this)">
       <span class="group-title">Data Engineering &amp; Analytics</span>
       <span class="group-count">11 papers</span>
-      <span class="group-chevron open">▾</span>
-    </div>
-    <div class="paper-list">
+      <span class="group-chevron open" aria-hidden="true">▾</span>
+    </button></h2>
+    <div class="paper-list" id="paper-group-data">
 
       <div class="paper" onclick="toggleDetail(this)">
         <div class="paper-num">13</div>
@@ -321,7 +335,7 @@ body{animation:pageFadeIn 0.4s cubic-bezier(0.4,0,0.2,1) both;}
         </div>
         <div class="paper-arrow">→</div>
       </div>
-      <div class="paper-detail"><div class="detail-inner"><span class="detail-year">2021</span><a class="detail-link" href="https://www.researchgate.net/publication/387222925" target="_blank">View Paper →</a></div></div>
+      <div class="paper-detail"><div class="detail-inner"><span class="detail-year">2021</span><a class="detail-link" href="https://www.researchgate.net/publication/387222925" target="_blank" rel="noopener noreferrer">View Paper →</a></div></div>
 
       <div class="paper" onclick="toggleDetail(this)">
         <div class="paper-num">14</div>
@@ -331,7 +345,7 @@ body{animation:pageFadeIn 0.4s cubic-bezier(0.4,0,0.2,1) both;}
         </div>
         <div class="paper-arrow">→</div>
       </div>
-      <div class="paper-detail"><div class="detail-inner"><span class="detail-year">2019</span><a class="detail-link" href="https://www.ijsdcs.com/index.php/ijsdcs/article/view/586" target="_blank">View Paper →</a></div></div>
+      <div class="paper-detail"><div class="detail-inner"><span class="detail-year">2019</span><a class="detail-link" href="https://www.ijsdcs.com/index.php/ijsdcs/article/view/586" target="_blank" rel="noopener noreferrer">View Paper →</a></div></div>
 
       <div class="paper" onclick="toggleDetail(this)">
         <div class="paper-num">15</div>
@@ -341,7 +355,7 @@ body{animation:pageFadeIn 0.4s cubic-bezier(0.4,0,0.2,1) both;}
         </div>
         <div class="paper-arrow">→</div>
       </div>
-      <div class="paper-detail"><div class="detail-inner"><span class="detail-year">2020</span><a class="detail-link" href="https://scholar.google.com/citations?user=H3XJtbcAAAAJ&hl=en" target="_blank">View Paper →</a></div></div>
+      <div class="paper-detail"><div class="detail-inner"><span class="detail-year">2020</span><a class="detail-link" href="https://scholar.google.com/citations?user=H3XJtbcAAAAJ&hl=en" target="_blank" rel="noopener noreferrer">Open Google Scholar →</a></div></div>
 
       <div class="paper" onclick="toggleDetail(this)">
         <div class="paper-num">16</div>
@@ -351,7 +365,7 @@ body{animation:pageFadeIn 0.4s cubic-bezier(0.4,0,0.2,1) both;}
         </div>
         <div class="paper-arrow">→</div>
       </div>
-      <div class="paper-detail"><div class="detail-inner"><span class="detail-year">2023</span><a class="detail-link" href="https://isjr.co.in/index.php/ISJR/article/view/257" target="_blank">View Paper →</a></div></div>
+      <div class="paper-detail"><div class="detail-inner"><span class="detail-year">2023</span><a class="detail-link" href="https://isjr.co.in/index.php/ISJR/article/view/257" target="_blank" rel="noopener noreferrer">View Paper →</a></div></div>
 
       <div class="paper" onclick="toggleDetail(this)">
         <div class="paper-num">17</div>
@@ -361,7 +375,7 @@ body{animation:pageFadeIn 0.4s cubic-bezier(0.4,0,0.2,1) both;}
         </div>
         <div class="paper-arrow">→</div>
       </div>
-      <div class="paper-detail"><div class="detail-inner"><span class="detail-year">2022</span><a class="detail-link" href="https://www.researchgate.net/publication/387222659" target="_blank">View Paper →</a></div></div>
+      <div class="paper-detail"><div class="detail-inner"><span class="detail-year">2022</span><a class="detail-link" href="https://www.researchgate.net/publication/387222659" target="_blank" rel="noopener noreferrer">View Paper →</a></div></div>
 
       <div class="paper" onclick="toggleDetail(this)">
         <div class="paper-num">18</div>
@@ -371,7 +385,7 @@ body{animation:pageFadeIn 0.4s cubic-bezier(0.4,0,0.2,1) both;}
         </div>
         <div class="paper-arrow">→</div>
       </div>
-      <div class="paper-detail"><div class="detail-inner"><span class="detail-year">2018</span><a class="detail-link" href="https://scholar.google.com/citations?user=H3XJtbcAAAAJ&hl=en" target="_blank">View Paper →</a></div></div>
+      <div class="paper-detail"><div class="detail-inner"><span class="detail-year">2018</span><a class="detail-link" href="https://scholar.google.com/citations?user=H3XJtbcAAAAJ&hl=en" target="_blank" rel="noopener noreferrer">Open Google Scholar →</a></div></div>
 
       <div class="paper" onclick="toggleDetail(this)">
         <div class="paper-num">19</div>
@@ -381,7 +395,7 @@ body{animation:pageFadeIn 0.4s cubic-bezier(0.4,0,0.2,1) both;}
         </div>
         <div class="paper-arrow">→</div>
       </div>
-      <div class="paper-detail"><div class="detail-inner"><span class="detail-year">2022</span><a class="detail-link" href="https://scholar.google.com/citations?user=H3XJtbcAAAAJ&hl=en" target="_blank">View Paper →</a></div></div>
+      <div class="paper-detail"><div class="detail-inner"><span class="detail-year">2022</span><a class="detail-link" href="https://scholar.google.com/citations?user=H3XJtbcAAAAJ&hl=en" target="_blank" rel="noopener noreferrer">Open Google Scholar →</a></div></div>
 
       <div class="paper" onclick="toggleDetail(this)">
         <div class="paper-num">20</div>
@@ -391,7 +405,7 @@ body{animation:pageFadeIn 0.4s cubic-bezier(0.4,0,0.2,1) both;}
         </div>
         <div class="paper-arrow">→</div>
       </div>
-      <div class="paper-detail"><div class="detail-inner"><span class="detail-year">2025</span><a class="detail-link" href="https://www.researchgate.net/publication/395922280" target="_blank">View Paper →</a></div></div>
+      <div class="paper-detail"><div class="detail-inner"><span class="detail-year">2025</span><a class="detail-link" href="https://www.researchgate.net/publication/395922280" target="_blank" rel="noopener noreferrer">View Paper →</a></div></div>
 
       <div class="paper" onclick="toggleDetail(this)">
         <div class="paper-num">21</div>
@@ -401,7 +415,7 @@ body{animation:pageFadeIn 0.4s cubic-bezier(0.4,0,0.2,1) both;}
         </div>
         <div class="paper-arrow">→</div>
       </div>
-      <div class="paper-detail"><div class="detail-inner"><span class="detail-year">2018</span><a class="detail-link" href="https://scholar.google.com/citations?user=H3XJtbcAAAAJ&hl=en" target="_blank">View Paper →</a></div></div>
+      <div class="paper-detail"><div class="detail-inner"><span class="detail-year">2018</span><a class="detail-link" href="https://scholar.google.com/citations?user=H3XJtbcAAAAJ&hl=en" target="_blank" rel="noopener noreferrer">Open Google Scholar →</a></div></div>
 
       <div class="paper" onclick="toggleDetail(this)">
         <div class="paper-num">22</div>
@@ -411,7 +425,7 @@ body{animation:pageFadeIn 0.4s cubic-bezier(0.4,0,0.2,1) both;}
         </div>
         <div class="paper-arrow">→</div>
       </div>
-      <div class="paper-detail"><div class="detail-inner"><span class="detail-year">2016</span><a class="detail-link" href="https://scholar.google.com/citations?user=H3XJtbcAAAAJ&hl=en" target="_blank">View Paper →</a></div></div>
+      <div class="paper-detail"><div class="detail-inner"><span class="detail-year">2016</span><a class="detail-link" href="https://scholar.google.com/citations?user=H3XJtbcAAAAJ&hl=en" target="_blank" rel="noopener noreferrer">Open Google Scholar →</a></div></div>
 
       <div class="paper" onclick="toggleDetail(this)">
         <div class="paper-num">23</div>
@@ -421,19 +435,19 @@ body{animation:pageFadeIn 0.4s cubic-bezier(0.4,0,0.2,1) both;}
         </div>
         <div class="paper-arrow">→</div>
       </div>
-      <div class="paper-detail"><div class="detail-inner"><span class="detail-year">2015</span><a class="detail-link" href="https://scholar.google.com/citations?user=H3XJtbcAAAAJ&hl=en" target="_blank">View Paper →</a></div></div>
+      <div class="paper-detail"><div class="detail-inner"><span class="detail-year">2015</span><a class="detail-link" href="https://scholar.google.com/citations?user=H3XJtbcAAAAJ&hl=en" target="_blank" rel="noopener noreferrer">Open Google Scholar →</a></div></div>
 
     </div>
   </div>
 
   <!-- GROUP 3: EDGE AI & EMERGING SYSTEMS -->
   <div class="group" data-group="edge">
-    <div class="group-header reveal" onclick="toggleGroup(this)">
+    <h2 class="group-heading"><button type="button" class="group-header reveal" aria-expanded="true" aria-controls="paper-group-edge" onclick="toggleGroup(this)">
       <span class="group-title">Edge AI &amp; Emerging Systems</span>
       <span class="group-count">10 papers</span>
-      <span class="group-chevron open">▾</span>
-    </div>
-    <div class="paper-list">
+      <span class="group-chevron open" aria-hidden="true">▾</span>
+    </button></h2>
+    <div class="paper-list" id="paper-group-edge">
 
       <div class="paper" onclick="toggleDetail(this)">
         <div class="paper-num">24</div>
@@ -443,7 +457,7 @@ body{animation:pageFadeIn 0.4s cubic-bezier(0.4,0,0.2,1) both;}
         </div>
         <div class="paper-arrow">→</div>
       </div>
-      <div class="paper-detail"><div class="detail-inner"><span class="detail-year">2023</span><a class="detail-link" href="https://isjr.co.in/index.php/ITAI/article/view/298" target="_blank">View Paper →</a></div></div>
+      <div class="paper-detail"><div class="detail-inner"><span class="detail-year">2023</span><a class="detail-link" href="https://isjr.co.in/index.php/ITAI/article/view/298" target="_blank" rel="noopener noreferrer">View Paper →</a></div></div>
 
       <div class="paper" onclick="toggleDetail(this)">
         <div class="paper-num">25</div>
@@ -453,7 +467,7 @@ body{animation:pageFadeIn 0.4s cubic-bezier(0.4,0,0.2,1) both;}
         </div>
         <div class="paper-arrow">→</div>
       </div>
-      <div class="paper-detail"><div class="detail-inner"><span class="detail-year">2023</span><a class="detail-link" href="https://isjr.co.in/index.php/TRDHS/article/view/289" target="_blank">View Paper →</a></div></div>
+      <div class="paper-detail"><div class="detail-inner"><span class="detail-year">2023</span><a class="detail-link" href="https://isjr.co.in/index.php/TRDHS/article/view/289" target="_blank" rel="noopener noreferrer">View Paper →</a></div></div>
 
       <div class="paper" onclick="toggleDetail(this)">
         <div class="paper-num">26</div>
@@ -463,7 +477,7 @@ body{animation:pageFadeIn 0.4s cubic-bezier(0.4,0,0.2,1) both;}
         </div>
         <div class="paper-arrow">→</div>
       </div>
-      <div class="paper-detail"><div class="detail-inner"><span class="detail-year">2021</span><a class="detail-link" href="https://scholar.google.com/citations?user=H3XJtbcAAAAJ&hl=en" target="_blank">View Paper →</a></div></div>
+      <div class="paper-detail"><div class="detail-inner"><span class="detail-year">2021</span><a class="detail-link" href="https://scholar.google.com/citations?user=H3XJtbcAAAAJ&hl=en" target="_blank" rel="noopener noreferrer">Open Google Scholar →</a></div></div>
 
       <div class="paper" onclick="toggleDetail(this)">
         <div class="paper-num">27</div>
@@ -473,7 +487,7 @@ body{animation:pageFadeIn 0.4s cubic-bezier(0.4,0,0.2,1) both;}
         </div>
         <div class="paper-arrow">→</div>
       </div>
-      <div class="paper-detail"><div class="detail-inner"><span class="detail-year">2022</span><a class="detail-link" href="https://ijsdcs.com/index.php/ijsdcs/article/view/627" target="_blank">View Paper →</a></div></div>
+      <div class="paper-detail"><div class="detail-inner"><span class="detail-year">2022</span><a class="detail-link" href="https://ijsdcs.com/index.php/ijsdcs/article/view/627" target="_blank" rel="noopener noreferrer">View Paper →</a></div></div>
 
       <div class="paper" onclick="toggleDetail(this)">
         <div class="paper-num">28</div>
@@ -483,7 +497,7 @@ body{animation:pageFadeIn 0.4s cubic-bezier(0.4,0,0.2,1) both;}
         </div>
         <div class="paper-arrow">→</div>
       </div>
-      <div class="paper-detail"><div class="detail-inner"><span class="detail-year">2021</span><a class="detail-link" href="https://www.researchgate.net/publication/385034876" target="_blank">View Paper →</a></div></div>
+      <div class="paper-detail"><div class="detail-inner"><span class="detail-year">2021</span><a class="detail-link" href="https://www.researchgate.net/publication/385034876" target="_blank" rel="noopener noreferrer">View Paper →</a></div></div>
 
       <div class="paper" onclick="toggleDetail(this)">
         <div class="paper-num">29</div>
@@ -493,7 +507,7 @@ body{animation:pageFadeIn 0.4s cubic-bezier(0.4,0,0.2,1) both;}
         </div>
         <div class="paper-arrow">→</div>
       </div>
-      <div class="paper-detail"><div class="detail-inner"><span class="detail-year">2020</span><a class="detail-link" href="https://www.researchgate.net/publication/385037063" target="_blank">View Paper →</a></div></div>
+      <div class="paper-detail"><div class="detail-inner"><span class="detail-year">2020</span><a class="detail-link" href="https://www.researchgate.net/publication/385037063" target="_blank" rel="noopener noreferrer">View Paper →</a></div></div>
 
       <div class="paper" onclick="toggleDetail(this)">
         <div class="paper-num">30</div>
@@ -503,7 +517,7 @@ body{animation:pageFadeIn 0.4s cubic-bezier(0.4,0,0.2,1) both;}
         </div>
         <div class="paper-arrow">→</div>
       </div>
-      <div class="paper-detail"><div class="detail-inner"><span class="detail-year">2021</span><a class="detail-link" href="https://www.researchgate.net/publication/387111500" target="_blank">View Paper →</a></div></div>
+      <div class="paper-detail"><div class="detail-inner"><span class="detail-year">2021</span><a class="detail-link" href="https://www.researchgate.net/publication/387111500" target="_blank" rel="noopener noreferrer">View Paper →</a></div></div>
 
       <div class="paper" onclick="toggleDetail(this)">
         <div class="paper-num">31</div>
@@ -513,7 +527,7 @@ body{animation:pageFadeIn 0.4s cubic-bezier(0.4,0,0.2,1) both;}
         </div>
         <div class="paper-arrow">→</div>
       </div>
-      <div class="paper-detail"><div class="detail-inner"><span class="detail-year">2021</span><a class="detail-link" href="https://injmr.com/index.php/fewfewf/article/view/156" target="_blank">View Paper →</a></div></div>
+      <div class="paper-detail"><div class="detail-inner"><span class="detail-year">2021</span><a class="detail-link" href="https://injmr.com/index.php/fewfewf/article/view/156" target="_blank" rel="noopener noreferrer">View Paper →</a></div></div>
 
       <div class="paper" onclick="toggleDetail(this)">
         <div class="paper-num">32</div>
@@ -523,7 +537,7 @@ body{animation:pageFadeIn 0.4s cubic-bezier(0.4,0,0.2,1) both;}
         </div>
         <div class="paper-arrow">→</div>
       </div>
-      <div class="paper-detail"><div class="detail-inner"><span class="detail-year">2020</span><a class="detail-link" href="https://injmr.com/index.php/fewfewf/article/view/155" target="_blank">View Paper →</a></div></div>
+      <div class="paper-detail"><div class="detail-inner"><span class="detail-year">2020</span><a class="detail-link" href="https://injmr.com/index.php/fewfewf/article/view/155" target="_blank" rel="noopener noreferrer">View Paper →</a></div></div>
 
       <div class="paper" onclick="toggleDetail(this)">
         <div class="paper-num">33</div>
@@ -533,7 +547,7 @@ body{animation:pageFadeIn 0.4s cubic-bezier(0.4,0,0.2,1) both;}
         </div>
         <div class="paper-arrow">→</div>
       </div>
-      <div class="paper-detail"><div class="detail-inner"><span class="detail-year">2014</span><a class="detail-link" href="https://scholar.google.com/citations?user=H3XJtbcAAAAJ&hl=en" target="_blank">View Paper →</a></div></div>
+      <div class="paper-detail"><div class="detail-inner"><span class="detail-year">2014</span><a class="detail-link" href="https://scholar.google.com/citations?user=H3XJtbcAAAAJ&hl=en" target="_blank" rel="noopener noreferrer">Open Google Scholar →</a></div></div>
 
     </div>
   </div>
@@ -543,28 +557,41 @@ body{animation:pageFadeIn 0.4s cubic-bezier(0.4,0,0.2,1) both;}
       <div class="sc-label">Full publication list with citation metrics</div>
       <div class="sc-title">View complete profile on Google Scholar</div>
     </div>
-    <a class="sc-link" href="https://scholar.google.com/citations?user=H3XJtbcAAAAJ&hl=en" target="_blank">Google Scholar →</a>
+    <a class="sc-link" href="https://scholar.google.com/citations?user=H3XJtbcAAAAJ&hl=en" target="_blank" rel="noopener noreferrer">Google Scholar →</a>
   </div>
 
 </div>
-
+</main>
 <footer>
   <div class="foot-logo">Sai Teja Boppiniti</div>
-  <div class="foot-copy">© 2025 Sai Teja Boppiniti · All Rights Reserved · saitejaboppiniti.com</div>
+  <div class="foot-copy">© 2026 Sai Teja Boppiniti · All Rights Reserved · saitejaboppiniti.com</div>
   <div class="foot-links">
-    <a href="https://scholar.google.com/citations?user=H3XJtbcAAAAJ&hl=en" target="_blank">Google Scholar</a>
-    <a href="https://www.linkedin.com/in/saitejaboppiniti" target="_blank">LinkedIn</a>
+    <a href="https://scholar.google.com/citations?user=H3XJtbcAAAAJ&hl=en" target="_blank" rel="noopener noreferrer">Google Scholar</a>
+    <a href="https://www.linkedin.com/in/saitejaboppiniti" target="_blank" rel="noopener noreferrer">LinkedIn</a>
   </div>
-</footer>
+  </footer>
 
 <script>
-// On load: collapse all groups
 window.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('.paper-list').forEach(list => {
-    list.style.maxHeight = '0';
-    list.classList.add('collapsed');
+    list.setAttribute('aria-hidden', 'false');
   });
-  document.querySelectorAll('.group-chevron').forEach(c => c.classList.remove('open'));
+  document.querySelectorAll('.paper').forEach((paper, index) => {
+    const detail = paper.nextElementSibling;
+    detail.id = `paper-detail-${index + 1}`;
+    detail.setAttribute('aria-hidden', 'true');
+    detail.inert = true;
+    paper.setAttribute('role', 'button');
+    paper.setAttribute('tabindex', '0');
+    paper.setAttribute('aria-expanded', 'false');
+    paper.setAttribute('aria-controls', detail.id);
+    paper.addEventListener('keydown', event => {
+      if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
+        toggleDetail(paper);
+      }
+    });
+  });
 });
 
 // Toggle individual paper detail
@@ -572,12 +599,22 @@ function toggleDetail(paperEl) {
   const detail = paperEl.nextElementSibling;
   const arrow = paperEl.querySelector('.paper-arrow');
   const isOpen = detail.classList.contains('open');
-  const allDetails = paperEl.closest('.paper-list').querySelectorAll('.paper-detail');
-  const allArrows = paperEl.closest('.paper-list').querySelectorAll('.paper-arrow');
-  allDetails.forEach(d => d.classList.remove('open'));
+  const paperList = paperEl.closest('.paper-list');
+  const allDetails = paperList.querySelectorAll('.paper-detail');
+  const allPapers = paperList.querySelectorAll('.paper');
+  const allArrows = paperList.querySelectorAll('.paper-arrow');
+  allDetails.forEach(d => {
+    d.classList.remove('open');
+    d.setAttribute('aria-hidden', 'true');
+    d.inert = true;
+  });
+  allPapers.forEach(p => p.setAttribute('aria-expanded', 'false'));
   allArrows.forEach(a => { a.style.transform = ''; a.style.color = ''; });
   if (!isOpen) {
     detail.classList.add('open');
+    detail.setAttribute('aria-hidden', 'false');
+    detail.inert = false;
+    paperEl.setAttribute('aria-expanded', 'true');
     arrow.style.transform = 'rotate(90deg)';
     arrow.style.color = '#000';
   }
@@ -585,85 +622,51 @@ function toggleDetail(paperEl) {
 
 // Toggle group open/close
 function toggleGroup(headerEl) {
-  const list = headerEl.nextElementSibling;
+  const list = headerEl.parentElement.nextElementSibling;
   const chevron = headerEl.querySelector('.group-chevron');
   const isOpen = chevron.classList.contains('open');
-  if (isOpen) {
-    list.style.maxHeight = list.scrollHeight + 'px';
-    requestAnimationFrame(() => { list.style.maxHeight = '0'; });
-    chevron.classList.remove('open');
-    setTimeout(() => list.classList.add('collapsed'), 360);
-  } else {
-    list.classList.remove('collapsed');
-    list.style.maxHeight = '0';
-    requestAnimationFrame(() => {
-      list.style.maxHeight = list.scrollHeight + 'px';
-    });
-    setTimeout(() => list.style.maxHeight = '', 360);
-    chevron.classList.add('open');
-  }
+  const open = !isOpen;
+  headerEl.setAttribute('aria-expanded', String(open));
+  list.setAttribute('aria-hidden', String(!open));
+  list.hidden = !open;
+  chevron.classList.toggle('open', open);
 }
 
-// Filter tabs — show only matching group, expand it; hide others collapsed
+// Filter tabs — show and expand the matching groups
 function filterGroup(topic, btn) {
   document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
   btn.classList.add('active');
+  document.querySelectorAll('.filter-btn').forEach(b => b.setAttribute('aria-pressed', String(b === btn)));
 
   document.querySelectorAll('.group').forEach(g => {
+    const show = topic === 'all' || g.dataset.group === topic;
+    g.style.display = show ? '' : 'none';
+    const header = g.querySelector('.group-header');
     const list = g.querySelector('.paper-list');
     const chevron = g.querySelector('.group-chevron');
-
-    if (topic === 'all') {
-      // show all but keep them collapsed — user clicks header to expand
-      g.style.display = '';
-      list.style.maxHeight = '0';
-      list.classList.add('collapsed');
-      chevron.classList.remove('open');
-    } else if (g.dataset.group === topic) {
-      // show and expand matching group
-      g.style.display = '';
-      list.classList.remove('collapsed');
-      list.style.maxHeight = '0';
-      requestAnimationFrame(() => { list.style.maxHeight = list.scrollHeight + 'px'; });
-      setTimeout(() => list.style.maxHeight = '', 360);
-      chevron.classList.add('open');
-    } else {
-      // hide non-matching groups entirely
-      g.style.display = 'none';
-    }
+    header.setAttribute('aria-expanded', String(show));
+    list.setAttribute('aria-hidden', String(!show));
+    list.hidden = !show;
+    chevron.classList.toggle('open', show);
   });
 }
 </script>
 
 <script>
 (function(){
+  if(!('IntersectionObserver' in window)) return;
   var obs=new IntersectionObserver(function(entries){
     entries.forEach(function(e){
       if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}
     });
-  },{threshold:0.12});
-  document.querySelectorAll('.reveal,.reveal-left,.reveal-right').forEach(function(el){obs.observe(el);});
-})();
-</script>
-<script>
-(function(){
-  // Fade out before navigating to new page
-  document.querySelectorAll('a').forEach(function(link){
-    var href = link.getAttribute('href');
-    if(!href) return;
-    // Only internal page links
-    if(href.indexOf('http') === -1 && href.indexOf('#') === -1 && href !== ''){
-      link.addEventListener('click', function(e){
-        e.preventDefault();
-        document.body.style.transition = 'opacity 0.3s cubic-bezier(0.4,0,0.2,1)';
-        document.body.style.opacity = '0';
-        setTimeout(function(){
-          window.location.href = href;
-        }, 300);
-      });
-    }
+  },{threshold:0.12,rootMargin:'0px 0px 120px 0px'});
+  document.querySelectorAll('.reveal,.reveal-left,.reveal-right').forEach(function(el){
+    if(el.getBoundingClientRect().top < window.innerHeight) el.classList.add('visible');
+    else obs.observe(el);
   });
+  document.documentElement.classList.add('js-enabled');
 })();
 </script>
+<script src="chat-widget.js" data-endpoint="https://sai-portfolio-chat.boppinitisaiteja.workers.dev/api/chat" defer></script>
 </body>
 </html>

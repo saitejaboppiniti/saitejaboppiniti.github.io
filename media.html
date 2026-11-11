@@ -8,22 +8,25 @@
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 <title>Media | Sai Teja Boppiniti</title>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="chat-widget.css"/>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 body{font-family:'Montserrat',sans-serif;background:#fff;color:#111;-webkit-font-smoothing:antialiased;font-size:14px;line-height:1.7;}
 a{text-decoration:none;color:inherit;}
+button,a{ -webkit-tap-highlight-color:transparent;}
+a:focus-visible,button:focus-visible,[role="button"]:focus-visible{outline:2px solid #4778d8;outline-offset:3px;}
 nav{background:#000;height:68px;display:flex;align-items:center;justify-content:space-between;padding:0 56px;position:sticky;top:0;z-index:100;}
-.nav-logo{font-size:15px;font-weight:800;color:#fff;}
+.nav-logo{font-size:15px;font-weight:800;color:#fff;white-space:nowrap;}
 .nav-links{display:flex;gap:36px;list-style:none;align-items:center;}
-.nav-links a{font-size:10px;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:rgba(255,255,255,0.45);transition:color 0.2s;}
+.nav-links a{font-size:10px;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:rgba(255,255,255,0.75);transition:color 0.2s;}
 .nav-links a:hover,.nav-active{color:#fff!important;}
 .nav-active{border-bottom:1px solid #fff;padding-bottom:3px;}
 
 /* HERO */
 .hero{background:#000;padding:64px 56px;}
-.hero-tag{font-size:9px;font-weight:700;letter-spacing:0.28em;text-transform:uppercase;color:rgba(255,255,255,0.3);margin-bottom:12px;}
+.hero-tag{font-size:9px;font-weight:700;letter-spacing:0.28em;text-transform:uppercase;color:rgba(255,255,255,0.72);margin-bottom:12px;}
 .hero-h1{font-size:42px;font-weight:900;color:#fff;letter-spacing:-0.02em;line-height:1.05;margin-bottom:10px;}
-.hero-sub{font-size:13px;font-weight:300;color:rgba(255,255,255,0.35);max-width:520px;}
+.hero-sub{font-size:13px;font-weight:300;color:rgba(255,255,255,0.72);max-width:520px;}
 
 /* BODY */
 .body{max-width:860px;margin:0 auto;padding:64px 56px 72px;}
@@ -36,14 +39,14 @@ nav{background:#000;height:68px;display:flex;align-items:center;justify-content:
 .press-row{display:grid;grid-template-columns:160px 1fr 60px;gap:20px;align-items:center;padding:18px 0;border-bottom:1px solid #ebebeb;transition:background 0.15s;}
 .press-row:hover .press-headline{color:#555;}
 .press-pub{font-size:11px;font-weight:800;letter-spacing:0.06em;color:#000;}
-.press-country{font-size:9px;font-weight:500;color:#bbb;letter-spacing:0.08em;text-transform:uppercase;margin-top:2px;}
+.press-country{font-size:9px;font-weight:500;color:#666;letter-spacing:0.08em;text-transform:uppercase;margin-top:2px;}
 .press-headline{font-size:13px;font-weight:500;color:#111;line-height:1.5;transition:color 0.15s;}
 .press-link{font-size:10px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#000;border-bottom:1px solid #000;padding-bottom:1px;white-space:nowrap;align-self:start;padding-top:2px;transition:opacity 0.15s;}
 .press-row:hover .press-link{opacity:0.35;}
 
 /* RESEARCH HIGHLIGHT */
 .highlight{border:1px solid #000;padding:36px;border-radius:2px;margin-bottom:56px;}
-.hl-tag{font-size:9px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:#999;margin-bottom:10px;}
+.hl-tag{font-size:9px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:#666;margin-bottom:10px;}
 .hl-h{font-size:22px;font-weight:900;color:#000;line-height:1.2;margin-bottom:14px;}
 .hl-desc{font-size:13px;font-weight:300;color:#555;line-height:1.85;margin-bottom:20px;}
 .hl-meta{display:flex;gap:12px;flex-wrap:wrap;}
@@ -56,8 +59,11 @@ nav{background:#000;height:68px;display:flex;align-items:center;justify-content:
 .cred-row{display:grid;grid-template-columns:1fr auto;gap:20px;align-items:center;padding:16px 20px;border:1px solid #e8e8e8;border-radius:2px;transition:border-color 0.2s;}
 .cred-row:hover{border-color:#000;}
 .cred-title{font-size:13px;font-weight:600;color:#000;}
-.cred-sub{font-size:11px;font-weight:300;color:#888;margin-top:2px;}
-.cred-tag{font-size:9px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#aaa;white-space:nowrap;}
+.cred-sub{font-size:11px;font-weight:300;color:#666;margin-top:2px;}
+.cred-sub a{color:#111;font-weight:500;text-decoration:underline;text-underline-offset:2px;}
+.cred-sub a:hover{color:#555;}
+.cred-note{font-size:11px;color:#666;margin:-6px 0 14px;}
+.cred-tag{font-size:9px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#666;white-space:nowrap;}
 
 footer{background:#000;padding:28px 56px;display:flex;align-items:center;justify-content:space-between;border-top:1px solid #1a1a1a;}
 .foot-logo{font-size:14px;font-weight:800;color:#fff;}
@@ -65,11 +71,13 @@ footer{background:#000;padding:28px 56px;display:flex;align-items:center;justify
 .foot-links{display:flex;gap:20px;}
 .foot-links a{font-size:10px;color:#555;transition:color 0.2s;}
 .foot-links a:hover{color:#fff;}
+.foot-copy{color:#aaa;}
+.foot-links a{color:#aaa;}
 
 /* ── MOBILE RESPONSIVE ── */
 @media (max-width: 768px) {
   nav{padding:0 20px;}
-  .nav-links{gap:16px;}
+  .nav-links{gap:16px;min-width:0;}
   .nav-links a{font-size:9px;}
   .hero{padding:40px 20px;}
   .body{padding:40px 20px 56px;}
@@ -79,21 +87,27 @@ footer{background:#000;padding:28px 56px;display:flex;align-items:center;justify
   footer{flex-direction:column;gap:12px;padding:24px 20px;text-align:center;}
 }
 
+@media (max-width: 480px) {
+  nav{height:auto;min-height:68px;align-items:flex-start;flex-direction:column;gap:8px;padding:12px 16px;}
+  .nav-links{width:100%;justify-content:space-between;gap:8px;}
+  .nav-links a{font-size:10px;letter-spacing:0.02em;}
+  .hero-h1{font-size:clamp(34px,11vw,42px);}
+}
+
 
 
 /* ── PAGE TRANSITIONS ── */
-@keyframes pageFadeIn{from{opacity:0;}to{opacity:1;}}
-body{animation:pageFadeIn 0.4s cubic-bezier(0.4,0,0.2,1) both;}
-.page-leave{opacity:0;transition:opacity 0.3s cubic-bezier(0.4,0,0.2,1);}
 
 /* ── SCROLL ANIMATIONS ── */
-.reveal{opacity:0;transform:translateY(32px);transition:opacity 0.7s cubic-bezier(0.4,0,0.2,1),transform 0.7s cubic-bezier(0.4,0,0.2,1);}
-.reveal.visible{opacity:1;transform:translateY(0);}
-.reveal-left{opacity:0;transform:translateX(-32px);transition:opacity 0.7s cubic-bezier(0.4,0,0.2,1),transform 0.7s cubic-bezier(0.4,0,0.2,1);}
-.reveal-left.visible{opacity:1;transform:translateX(0);}
-.reveal-right{opacity:0;transform:translateX(32px);transition:opacity 0.7s cubic-bezier(0.4,0,0.2,1),transform 0.7s cubic-bezier(0.4,0,0.2,1);}
-.reveal-right.visible{opacity:1;transform:translateX(0);}
+.reveal,.reveal-left,.reveal-right{opacity:1;transform:none;transition:opacity 0.7s cubic-bezier(0.4,0,0.2,1),transform 0.7s cubic-bezier(0.4,0,0.2,1);}
+.js-enabled .reveal,.js-enabled .reveal-left,.js-enabled .reveal-right{opacity:0;transform:translateY(32px);}
+.js-enabled .reveal.visible,.js-enabled .reveal-left.visible,.js-enabled .reveal-right.visible{opacity:1;transform:translateY(0);}
 .delay-1{transition-delay:0.1s;}.delay-2{transition-delay:0.2s;}.delay-3{transition-delay:0.3s;}.delay-4{transition-delay:0.4s;}.delay-5{transition-delay:0.5s;}
+
+@media (prefers-reduced-motion: reduce) {
+  *,*::before,*::after{scroll-behavior:auto!important;animation:none!important;transition-duration:0.01ms!important;transition-delay:0ms!important;}
+  .reveal,.reveal-left,.reveal-right,.js-enabled .reveal,.js-enabled .reveal-left,.js-enabled .reveal-right{opacity:1;transform:none;}
+}
 
 </style>
 <meta property="og:type" content="website"/>
@@ -101,8 +115,9 @@ body{animation:pageFadeIn 0.4s cubic-bezier(0.4,0,0.2,1) both;}
 <meta property="og:title" content="Media — Sai Teja Boppiniti"/>
 <meta property="og:description" content="Press coverage in Times of India, Deccan Chronicle, Jagran and BD Tech Talks for research on AI-embedded smart contact lenses for health monitoring."/>
 <meta property="og:image" content="https://saitejaboppiniti.com/profile.jpg"/>
-<meta property="og:image:width" content="800"/>
-<meta property="og:image:height" content="800"/>
+<meta property="og:image:width" content="798"/>
+<meta property="og:image:height" content="997"/>
+<link rel="canonical" href="https://saitejaboppiniti.com/media.html"/>
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:title" content="Media — Sai Teja Boppiniti"/>
 <meta name="twitter:description" content="Press coverage in Times of India, Deccan Chronicle, Jagran and BD Tech Talks for research on AI-embedded smart contact lenses for health monitoring."/>
@@ -118,126 +133,119 @@ body{animation:pageFadeIn 0.4s cubic-bezier(0.4,0,0.2,1) both;}
 </head>
 <body>
 
-<nav>
-  <div class="nav-logo">Sai Teja Boppiniti</div>
+<nav aria-label="Primary">
+  <a class="nav-logo" href="index.html">Sai Teja Boppiniti</a>
   <ul class="nav-links">
     <li><a href="index.html">Home</a></li>
     <li><a href="about.html">About</a></li>
     <li><a href="publications.html">Publications</a></li>
-    <li><a href="media.html" class="nav-active">Media</a></li>
+    <li><a href="media.html" class="nav-active" aria-current="page">Media</a></li>
   </ul>
 </nav>
 
+<main>
 <div class="hero">
   <div class="hero-tag">Press &amp; Recognition</div>
-  <div class="hero-h1">Media</div>
+  <h1 class="hero-h1">Media</h1>
   <p class="hero-sub">Press coverage, research highlights, and professional recognition.</p>
 </div>
 
 <div class="body">
 
   <!-- PRESS -->
-  <div class="sec-label">Press Coverage</div>
+  <h2 class="sec-label">Press Coverage</h2>
   <div class="press-list">
     <div class="press-row reveal">
-      <div><div class="press-pub">Times of India</div><div class="press-country">India</div></div>
+      <div><div class="press-pub">Times of India</div><div class="press-country">India · <time datetime="2024-10-03">3 Oct 2024</time></div></div>
       <div class="press-headline">AI-driven health monitoring: Shift from reactive to proactive care</div>
-      <a class="press-link" href="https://timesofindia.indiatimes.com/city/mumbai/ai-driven-health-monitoring-shift-from-reactive-to-proactive-care/articleshow/113911499.cms" target="_blank">Read →</a>
+      <a class="press-link" href="https://timesofindia.indiatimes.com/city/mumbai/ai-driven-health-monitoring-shift-from-reactive-to-proactive-care/articleshow/113911499.cms" target="_blank" rel="noopener noreferrer">Read →</a>
     </div>
     <div class="press-row reveal">
-      <div><div class="press-pub">Deccan Chronicle</div><div class="press-country">India</div></div>
+      <div><div class="press-pub">Deccan Chronicle</div><div class="press-country">India · <time datetime="2024-10-01">1 Oct 2024</time></div></div>
       <div class="press-headline">Indian Researcher Develops Smart Contact Lenses with AI for Continuous Health Tracking and Disease Detection</div>
-      <a class="press-link" href="https://www.deccanchronicle.com/in-focus/indian-researcher-develops-smart-contact-lenses-with-ai-for-continuous-health-tracking-and-disease-detection-1827211" target="_blank">Read →</a>
+      <a class="press-link" href="https://www.deccanchronicle.com/in-focus/indian-researcher-develops-smart-contact-lenses-with-ai-for-continuous-health-tracking-and-disease-detection-1827211" target="_blank" rel="noopener noreferrer">Read →</a>
     </div>
     <div class="press-row reveal">
-      <div><div class="press-pub">Jagran</div><div class="press-country">India</div></div>
+      <div><div class="press-pub">Jagran</div><div class="press-country">India · <time datetime="2024-09-30">30 Sep 2024</time></div></div>
       <div class="press-headline">Scientists Experiment to Monitor Diabetes Using AI Technology</div>
-      <a class="press-link" href="https://www.jagran.com/delhi/new-delhi-city-ncr-scientists-experiment-to-monitor-diabetes-using-ai-technology-23807495.html" target="_blank">Read →</a>
+      <a class="press-link" href="https://www.jagran.com/delhi/new-delhi-city-ncr-scientists-experiment-to-monitor-diabetes-using-ai-technology-23807495.html" target="_blank" rel="noopener noreferrer">Read →</a>
     </div>
     <div class="press-row reveal">
-      <div><div class="press-pub">BD Tech Talks</div><div class="press-country">International</div></div>
-      <div class="press-headline">AI-powered smart contact lenses: What will they be like?</div>
-      <a class="press-link" href="https://bdtechtalks.com/2024/11/08/ai-powered-smart-contact-lenses/" target="_blank">Read →</a>
-    </div>
-    <div class="press-row reveal">
-      <div><div class="press-pub">LinkedIn</div><div class="press-country">International</div></div>
+      <div><div class="press-pub">Emerge Smart Health (LinkedIn article)</div><div class="press-country">International · <time datetime="2024-12-26">26 Dec 2024</time></div></div>
       <div class="press-headline">Revolutionizing Healthcare with Smart Contact Lenses: The Future of Proactive Health Monitoring</div>
-      <a class="press-link" href="https://www.linkedin.com/pulse/revolutionizing-healthcare-smart-contact-lenses-future-lzqef" target="_blank">Read →</a>
+      <a class="press-link" href="https://www.linkedin.com/pulse/revolutionizing-healthcare-smart-contact-lenses-future-lzqef" target="_blank" rel="noopener noreferrer">Read →</a>
+    </div>
+    <div class="press-row reveal">
+      <div><div class="press-pub">BD Tech Talks</div><div class="press-country">International · <time datetime="2024-11-08">8 Nov 2024</time></div></div>
+      <div class="press-headline">Mentioned in: “AI-powered smart contact lenses: What will they be like?”</div>
+      <a class="press-link" href="https://bdtechtalks.com/2024/11/08/ai-powered-smart-contact-lenses/" target="_blank" rel="noopener noreferrer">Read →</a>
     </div>
   </div>
 
-  <div class="sec-label">Research Highlight</div>
+  <h2 class="sec-label">Research Highlight</h2>
   <div style="height:16px;"></div>
   <div class="highlight reveal">
     <div class="hl-tag">Featured in Press · 2024</div>
-    <div class="hl-h">AI-Embedded Smart Contact Lenses<br>for Continuous Health Monitoring</div>
-    <p class="hl-desc">The research behind the press coverage — AI-embedded smart contact lenses that continuously monitor glucose levels, intraocular pressure, and other ocular health indicators in real time. The system uses edge AI to process readings and deliver predictive health insights, shifting healthcare from reactive to proactive.</p>
+    <h3 class="hl-h">AI-Embedded Smart Contact Lenses<br>for Continuous Health Monitoring</h3>
+    <p class="hl-desc">The paper explores AI-embedded smart contact lenses for monitoring glucose levels, intraocular pressure, and other ocular health indicators. It discusses edge AI for processing readings and potential health insights.</p>
     <div class="hl-meta">
-      <a class="hl-badge-out" href="https://repo.ijiert.org/index.php/ijiert/article/view/3924" target="_blank">Read the Paper →</a>
+      <a class="hl-badge-out" href="https://repo.ijiert.org/index.php/ijiert/article/view/3924" target="_blank" rel="noopener noreferrer">Read the Paper →</a>
     </div>
   </div>
 
   <!-- CREDENTIALS -->
-  <div class="sec-label">Recognition &amp; Credentials</div>
+  <h2 class="sec-label">Recognition &amp; Credentials</h2>
   <div style="height:16px;"></div>
+  <p class="cred-note">Credentials below are portfolio-listed; supporting organization links are not currently provided.</p>
   <div class="cred-list">
     <div class="cred-row reveal">
-      <div><div class="cred-title">Research Fellowships</div><div class="cred-sub">Prestigious academic fellowships recognizing contributions to AI and data science</div></div>
+      <div><div class="cred-title">Research Fellowships</div><div class="cred-sub">Academic fellowships in AI and data science</div></div>
       <div class="cred-tag">Fellowship</div>
     </div>
     <div class="cred-row reveal">
-      <div><div class="cred-title">Editorial Board Member</div><div class="cred-sub">International AI &amp; machine learning journals</div></div>
+      <div><div class="cred-title">Editorial Board Member &amp; Reviewer</div><div class="cred-sub">Six IAEME Publication journals: <a href="https://iaeme.com/Home/editorial_board/IJAIML/Boppiniti" target="_blank" rel="noopener noreferrer" title="International Journal of Artificial Intelligence &amp; Machine Learning">IJAIML</a>, <a href="https://iaeme.com/Home/editorial_board/IJDERD/Boppiniti" target="_blank" rel="noopener noreferrer" title="International Journal of Data Engineering Research and Development">IJDERD</a>, <a href="https://iaeme.com/Home/editorial_board/IJDST/Boppiniti" target="_blank" rel="noopener noreferrer" title="International Journal of Data Scientist">IJDST</a>, <a href="https://iaeme.com/Home/editorial_board/IJCET/Boppiniti" target="_blank" rel="noopener noreferrer" title="International Journal of Computer Engineering and Technology">IJCET</a>, <a href="https://iaeme.com/Home/editorial_board/IJARET/boppiniti" target="_blank" rel="noopener noreferrer" title="International Journal of Advanced Research in Engineering and Technology">IJARET</a> and <a href="https://iaeme.com/Home/editorial_board/IJEET/Boppiniti" target="_blank" rel="noopener noreferrer" title="International Journal of Electrical Engineering and Technology">IJEET</a></div></div>
       <div class="cred-tag">Editorial</div>
     </div>
     <div class="cred-row reveal">
-      <div><div class="cred-title">Peer Reviewer</div><div class="cred-sub">Top-tier international publications in AI, ML, and data science</div></div>
+      <div><div class="cred-title">Registered UK Design No. 6466471</div><div class="cred-sub">AI Powered Optical Character Recognition Device · UK Intellectual Property Office · Registered <time datetime="2025-08-19">19 Aug 2025</time> · Co-registered with Manaswini Davuluri · <a href="https://www.gov.uk/search-registered-design" target="_blank" rel="noopener noreferrer">Search the register</a></div></div>
+      <div class="cred-tag">Design</div>
+    </div>
+    <div class="cred-row reveal">
+      <div><div class="cred-title">Peer Reviewer</div><div class="cred-sub">Peer review service for AI, ML, and data-science publications</div></div>
       <div class="cred-tag">Peer Review</div>
     </div>
     <div class="cred-row reveal">
-      <div><div class="cred-title">1,000+ Citations</div><div class="cred-sub">Google Scholar</div></div>
+      <div><a class="cred-title" href="https://scholar.google.com/citations?user=H3XJtbcAAAAJ&amp;hl=en" target="_blank" rel="noopener noreferrer">500+ Citations</a><div class="cred-sub">Google Scholar</div></div>
       <div class="cred-tag">Academic</div>
     </div>
   </div>
 
 </div>
 
+ </main>
 <footer>
   <div class="foot-logo">Sai Teja Boppiniti</div>
-  <div class="foot-copy">© 2025 Sai Teja Boppiniti · All Rights Reserved · saitejaboppiniti.com</div>
+  <div class="foot-copy">© 2026 Sai Teja Boppiniti · All Rights Reserved · saitejaboppiniti.com</div>
   <div class="foot-links">
-    <a href="https://scholar.google.com/citations?user=H3XJtbcAAAAJ&hl=en" target="_blank">Google Scholar</a>
-    <a href="https://www.linkedin.com/in/saitejaboppiniti" target="_blank">LinkedIn</a>
+    <a href="https://scholar.google.com/citations?user=H3XJtbcAAAAJ&hl=en" target="_blank" rel="noopener noreferrer">Google Scholar</a>
+    <a href="https://www.linkedin.com/in/saitejaboppiniti" target="_blank" rel="noopener noreferrer">LinkedIn</a>
   </div>
 </footer>
 <script>
 (function(){
+  if(!('IntersectionObserver' in window)) return;
   var obs=new IntersectionObserver(function(entries){
     entries.forEach(function(e){
       if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}
     });
-  },{threshold:0.12});
-  document.querySelectorAll('.reveal,.reveal-left,.reveal-right').forEach(function(el){obs.observe(el);});
-})();
-</script>
-<script>
-(function(){
-  // Fade out before navigating to new page
-  document.querySelectorAll('a').forEach(function(link){
-    var href = link.getAttribute('href');
-    if(!href) return;
-    // Only internal page links
-    if(href.indexOf('http') === -1 && href.indexOf('#') === -1 && href !== ''){
-      link.addEventListener('click', function(e){
-        e.preventDefault();
-        document.body.style.transition = 'opacity 0.3s cubic-bezier(0.4,0,0.2,1)';
-        document.body.style.opacity = '0';
-        setTimeout(function(){
-          window.location.href = href;
-        }, 300);
-      });
-    }
+  },{threshold:0.12,rootMargin:'0px 0px 120px 0px'});
+  document.querySelectorAll('.reveal,.reveal-left,.reveal-right').forEach(function(el){
+    if(el.getBoundingClientRect().top < window.innerHeight) el.classList.add('visible');
+    else obs.observe(el);
   });
+  document.documentElement.classList.add('js-enabled');
 })();
 </script>
+<script src="chat-widget.js" data-endpoint="https://sai-portfolio-chat.boppinitisaiteja.workers.dev/api/chat" defer></script>
 </body>
 </html>
