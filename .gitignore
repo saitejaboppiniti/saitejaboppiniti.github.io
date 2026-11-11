@@ -1,0 +1,6 @@
+.DS_Store
+**/.DS_Store
+.wrangler/
+**/.wrangler/
+chat-worker/
+CHATBOT_SETUP.md
